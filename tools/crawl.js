@@ -5,15 +5,19 @@ const chalk = require('chalk');
 const jetpack = require('fs-jetpack');
 const uuidv1 = require('uuid/v4');
 
-console.log(chalk.blue('crawling...'));
-
 let content = {},
     totalFileSize = 0;
 
-readDirectoryRecursively('../content', () => {
-    jetpack.write(path.resolve(__dirname, '../static/content.json'), content, { jsonIndent: 4 });
+let contentDirectory = '../content',
+    distDirectory = '../static/',
+    targetFile = 'content.json';
 
-    console.log(chalk.green(`Generated content.json in static directory.`));
+console.log(chalk.blue('crawling...'));
+
+readDirectoryRecursively(contentDirectory, () => {
+    jetpack.write(path.resolve(__dirname, distDirectory + targetFile), content, { jsonIndent: 4 });
+
+    console.log(chalk.green(`Generated ` + targetFile + ` in '` + distDirectory + `' directory.`));
     console.log(chalk.green(`Total content folder size: ` +
         chalk.white.bold(totalFileSize) +
         ` bytes`)
@@ -60,15 +64,13 @@ function readFile(filePath, directoryName)
     let imageDetails = jetpack.inspect(filePath.replace('.json', '.png'));
     if (imageDetails)
     {
-        // print image details
         console.log(chalk.blue(`name: ` +
-            chalk.blue.bold(`${imageDetails.name}`) +
-            ` - ` +
-            chalk.blue.bold(`${imageDetails.size}`) +
-            ` bytes`)
+            chalk.blue.bold(`${imageDetails.name}`) + ` - ` +
+            chalk.blue.bold(`${imageDetails.size}`) + ` bytes`)
         );
 
-        // save current file size
+        // save current file size to show total
+        // file size of all images when done
         totalFileSize += imageDetails.size;
 
         // add unique ID
@@ -85,6 +87,8 @@ function readFile(filePath, directoryName)
     }
     else
     {
+        // do nothing if no image is found
+        // because there is no content
         console.log(chalk.red(`ERROR - No image found for ${fileContent.slug}, skipping this file.`));
     }
 }
