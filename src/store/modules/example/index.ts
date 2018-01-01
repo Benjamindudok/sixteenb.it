@@ -5,16 +5,22 @@ import getters from './getters';
 import actions from './actions';
 import mutations from './mutations';
 
-export { IExampleGetters } from './getters';
+export { ISpritesGetters } from './getters';
 
-export interface IExampleState {
-    data: any;
+export interface ISpritesState {
+    environment: sixteenBit.IItem[];
+    characters: sixteenBit.IItem[];
+    items: sixteenBit.IItem[];
+    ui: sixteenBit.IItem[];
 }
 
-export const sprites: Module<IExampleState, IStoreState> = {
+export const sprites: Module<ISpritesState, IStoreState> = {
 
     state: {
-        data: []
+        environment: [],
+        characters: [],
+        items: [],
+        ui: []
     },
 
     getters: getters,

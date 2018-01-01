@@ -1,18 +1,18 @@
 import { ActionContext, ActionTree } from 'vuex';
 import { IStoreState } from 'src/store';
-import { IExampleState } from 'src/store/modules/example';
+import { ISpritesState } from 'src/store/modules/example';
 import * as types from 'src/store/types';
 import { DataService } from 'src/services/';
 
-export const actions: ActionTree<IExampleState,  IStoreState> = {
-    [types.GET_DATA](context: ActionContext<IExampleState, IStoreState>): Promise<void>
+export const actions: ActionTree<ISpritesState,  IStoreState> = {
+    [types.GET_SPRITES](context: ActionContext<ISpritesState, IStoreState>): Promise<void>
     {
         return new Promise<void>((resolve, reject) =>
         {
             DataService.getData()
-                .then((data: any) =>
+                .then((data: sixteenBit.IContent) =>
                 {
-                    context.commit(types.UPDATE_DATA, data);
+                    context.commit(types.UPDATE_SPRITES, data);
                     resolve(undefined);
                 }).catch((error) =>
                 {

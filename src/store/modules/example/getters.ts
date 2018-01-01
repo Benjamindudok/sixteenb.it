@@ -1,17 +1,27 @@
 import { GetterTree } from 'vuex';
 import { IStoreState } from 'src/store';
-import { IExampleState } from 'src/store/modules/example';
+import { ISpritesState } from 'src/store/modules/example';
 
-export interface IExampleGetters
+export interface ISpritesGetters
 {
-    data: any;
+    sprites: sixteenBit.IItem[];
+    spritesInCategory: sixteenBit.IItem[];
 }
 
-export const getters: GetterTree<IExampleState, IStoreState> = {
-
-    data( state: IExampleState ): any
+export const getters: GetterTree<ISpritesState, IStoreState> = {
+    sprites( state: ISpritesState ): sixteenBit.IItem[]
     {
-        return state.data;
+        return state.characters
+            .concat(state.environment)
+            .concat(state.ui)
+            .concat(state.items);
+    },
+
+    spritesInCategory( state: ISpritesState ): Function
+    {
+        return (category: string) => {
+            return state[category];
+        };
     }
 };
 

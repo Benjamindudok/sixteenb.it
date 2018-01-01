@@ -5,7 +5,7 @@ import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
-import example, { IExampleGetters, IExampleState }  from './modules/example/';
+import sprites, { ISpritesGetters, ISpritesState }  from './modules/example/';
 
 Vue.use(Vuex);
 
@@ -16,25 +16,28 @@ export interface IStore<S> extends Store<S>
 
 export interface IStoreState
 {
-    example: IExampleState;
+    sprites: ISpritesState;
 }
 
-export interface IStoreGetters extends IExampleGetters
+export interface IStoreGetters extends ISpritesGetters
 {
 
 }
 
 const store: IStore<IStoreState> = new Vuex.Store<IStoreState>({
     state: {
-        example: {
-            data: [],
+        sprites: {
+            environment: [],
+            characters: [],
+            items: [],
+            ui: []
         }
     },
     actions: actions,
     mutations: mutations,
     getters: getters,
     modules: {
-        example
+        sprites
     }
 });
 

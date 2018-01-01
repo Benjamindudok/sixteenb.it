@@ -10,10 +10,10 @@ export default class App extends Vue
     msg: string = 'Welcome to Your Vue.js App from vue-cli';
 
     mounted(): void {
-        this.$store.dispatch(types.GET_DATA);
+        this.$store.dispatch(types.GET_SPRITES);
     }
 
     get response(): string {
-        return this.$store.getters.data;
+        return this.$store.getters.sprites;
     }
 }

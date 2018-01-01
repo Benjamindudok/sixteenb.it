@@ -1,10 +1,13 @@
 import { MutationTree } from 'vuex';
-import { IExampleState } from 'src/store/modules/example';
+import { ISpritesState } from 'src/store/modules/example';
 import * as types from 'src/store/types';
 
-export const mutations: MutationTree<IExampleState> = {
-    [types.UPDATE_DATA](state: IExampleState, data: any): void {
-        state.data = data;
+export const mutations: MutationTree<ISpritesState> = {
+    [types.UPDATE_SPRITES](state: ISpritesState, data: sixteenBit.IContent): void {
+        state.environment = data.environment || [];
+        state.items = data.items || [];
+        state.characters = data.characters || [];
+        state.ui = data.ui || [];
     }
 };
 
