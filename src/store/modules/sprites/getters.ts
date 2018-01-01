@@ -1,6 +1,6 @@
 import { GetterTree } from 'vuex';
 import { IStoreState } from 'src/store';
-import { ISpritesState } from 'src/store/modules/example';
+import { ISpritesState } from 'src/store/modules/sprites';
 
 export interface ISpritesGetters
 {

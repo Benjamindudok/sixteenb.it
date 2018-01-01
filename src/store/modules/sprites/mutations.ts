@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import { ISpritesState } from 'src/store/modules/example';
+import { ISpritesState } from 'src/store/modules/sprites';
 import * as types from 'src/store/types';
 
 export const mutations: MutationTree<ISpritesState> = {

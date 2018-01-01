@@ -1,6 +1,6 @@
 import { ActionContext, ActionTree } from 'vuex';
 import { IStoreState } from 'src/store';
-import { ISpritesState } from 'src/store/modules/example';
+import { ISpritesState } from 'src/store/modules/sprites';
 import * as types from 'src/store/types';
 import { DataService } from 'src/services/';
 

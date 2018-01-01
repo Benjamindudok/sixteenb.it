@@ -5,7 +5,7 @@ import actions from './actions';
 import getters from './getters';
 import mutations from './mutations';
 
-import sprites, { ISpritesGetters, ISpritesState }  from './modules/example/';
+import sprites, { ISpritesGetters, ISpritesState }  from './modules/sprites/';
 
 Vue.use(Vuex);
 
