@@ -1,0 +1,36 @@
+/// <reference path='../_reference.scss' />
+
+html, body {
+    background: map-deep-get($colors, 'grey', 'default');
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.container {
+    margin: 0;
+    padding: 0 15px;
+    width: 100%;
+
+    @include respond-to(medium) {
+        padding: 0 20px;
+    }
+
+    @include respond-to(xxlarge) {
+        margin: 0 auto;
+        max-width: 1920px;
+        padding: 0 40px;
+        width: 100%;
+    }
+
+    &__content {
+        padding: 10px;
+
+        @include respond-to(medium) {
+            padding: 30px;
+        }
+
+        @include respond-to(xlarge) {
+            padding: 50px;
+        }
+    }
+}
