@@ -1,5 +1,5 @@
 {
-    "ignoreFiles": [ "../src/scss/_shame.scss", "../src/scss/vendors/**/*.scss" ],
+    "ignoreFiles": [ "./src/scss/base/_reset.scss", "./src/scss/_shame.scss", "./src/scss/vendors/**/*.scss" ],
     "rules": {
     "at-rule-name-case": "lower",
         "at-rule-name-space-after": "always",
@@ -130,7 +130,7 @@
 
         "unit-case": "lower",
         "unit-no-unknown": true,
-        "unit-whitelist": [ "px", "em", "rem", "%", "s", "vw", "vh", "deg", "dpi", "dppx" ],
+        "unit-whitelist": [ "px", "em", "rem", "%", "s", "vw", "vh", "deg", "dpi", "dppx", "fr" ],
         "value-no-vendor-prefix": true
 }
 }

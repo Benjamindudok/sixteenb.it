@@ -12,10 +12,21 @@ declare namespace sixteenBit
         slug: string;
         tags: string[];
         uuid: string;
+        columns: number;
+        rows: number;
     }
 
-    const enum tags {
-        isometric,
-        '2d'
+    enum Categories {
+        'environment',
+        'characters',
+        'items',
+        'ui'
+    }
+
+    enum Tags {
+        'rpg',
+        'npc',
+        'side-scroller',
+        'top-down'
     }
 }

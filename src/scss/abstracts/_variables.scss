@@ -1,8 +1,9 @@
 //
 // Typography
 
+$header-family: 'Poppins', sans-serif;
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$font-size-base: 14;
+$font-size-base: 16;
 
 //
 // Breakpoints
@@ -13,23 +14,19 @@ $breakpoints: ('small': 0, 'medium': 640px, 'large': 1024px, 'xlarge': 1200px, '
 // Colors
 $colors: (
     'black': ('dark': darken(#030303, 5%), 'default': #030303, 'light': lighten(#030303, 5%)),
-    'blue': ('dark': darken(#2a86e1, 5%), 'default': #2a86e1, 'light': lighten(#2a86e1, 10%)),
-    'green': ('dark': darken(#44ce00, 5%), 'default': #44ce00, 'light': lighten(#44ce00, 5%)),
-    'grey': ('darkest': darken(#f7f8f9, 50%), 'darker': darken(#f7f8f9, 20%), 'dark': darken(#f7f8f9, 8%), 'default': #f7f8f9, 'light': lighten(#f7f8f9, 1%)),
-    'navy': ('darker': darken(#2d61a9, 20%), 'dark': darken(#2d61a9, 8%), 'default': #2d61a9, 'light': #caddef),
-    'red': ('dark': darken(#e53f3f, 5%), 'default': #e53f3f, 'light': lighten(#e53f3f, 5%)),
-    'white': ('dark': #eeeeee, 'default': #ffffff, 'light': #ffffff),
-    'orange': ('dark': darken(#ff924a, 5%), 'default': #ff924a, 'light': lighten(#ff924a, 5%))
+    'blue': ('dark': darken(#1accca, 5%), 'default': #1accca, 'light': lighten(#1accca, 10%)),
+    'turqiouse': ('dark': darken(#41d0a3, 5%), 'default': #41d0a3, 'light': lighten(#41d0a3, 10%)),
+    'lemon': ('dark': darken(#bcdd24, 5%), 'default': #bcdd24, 'light': lighten(#bcdd24, 10%)),
+    'white': ('dark': #ededed, 'default': #f4f4f4, 'light': #ffffff)
 );
 
-$color-text-grey: #374450;
-$color-text-grey-light: #556a7d;
+$color-text-grey: map-deep-get($colors, 'black', 'light');
 $color-header: $color-text-grey;
 $color-header-alternate: map-deep-get($colors, 'blue', 'default');
-$color-anchor: map-deep-get($colors, 'blue', 'default');
-$color-anchor-hover: map-deep-get($colors, 'blue', 'light');
-$color-anchor-focus: map-deep-get($colors, 'blue', 'default');
-$color-border: map-deep-get($colors, 'grey', 'dark');
+$color-anchor: map-deep-get($colors, 'lemon', 'default');
+$color-anchor-hover: map-deep-get($colors, 'lemon', 'light');
+$color-anchor-focus: map-deep-get($colors, 'lemon', 'default');
+$color-border: map-deep-get($colors, 'black', 'default');
 
 //
 // Transition defaults
@@ -40,26 +37,31 @@ $transition-default: all $transition-default-time $transition-default-smoothing;
 //
 // Layout
 $navbar-height: 64px;
-$breadcrumb-bar-height: 64px;
 
 //
-// Button Variables
+// Badge Variables
 // Create variants of buttons
-$button-color-variants: $colors;
-$button-create-color-variants: true;
+$badge-color-variants: $colors;
+$badge-create-color-variants: true;
 
-// Button Defaults
-$button-default-background: map-deep-get($colors, 'grey', 'darker');
-$button-default-background-hover: map-deep-get($colors, 'blue', 'default');
-$button-default-color: map-deep-get($colors, 'blue', 'default');
-$button-default-color-hover: map-deep-get($colors, 'blue', 'default');
+// Badge Defaults
+$badge-default-background: map-deep-get($colors, 'blue', 'darker');
+$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
+$badge-default-color: map-deep-get($colors, 'white', 'default');
+$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
 
-$button-font-family: $font-family;
-$button-font-size: rem-calc(12);
-$button-transition: $transition-default;
-$button-variants: (
-    'inactive': ('default': $button-default-background, 'hover': $button-default-background-hover),
-    'error': ('default': map-deep-get($colors, 'red', 'default'), 'hover': map-deep-get($colors, 'red', 'light')),
-    'warning': ('default': map-deep-get($colors, 'orange', 'default'), 'hover': map-deep-get($colors, 'orange', 'light')),
-    'success': ('default': map-deep-get($colors, 'green', 'default'), 'hover': map-deep-get($colors, 'green', 'light'))
-);
+$badge-font-family: $font-family;
+$badge-font-size: rem-calc(12);
+$badge-transition: $transition-default;
+
+//
+// Card Variables
+$card-default-background: transparent;
+$card-default-border-color: transparent;
+$card-default-border-highlight: map-deep-get($colors, 'blue', 'default');
+$card-default-border-width: 5px;
+$card-default-border-radius: 3px;
+$card-default-padding: 20px 30px 30px;
+$card-default-title-color: $color-text-grey;
+$card-default-content-color: map-deep-get($colors, 'white', 'darkest');
+$card-default-meta-color: $color-text-grey;

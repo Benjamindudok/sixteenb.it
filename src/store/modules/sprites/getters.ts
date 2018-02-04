@@ -19,8 +19,8 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
 
     spritesInCategory( state: ISpritesState ): Function
     {
-        return (category: string) => {
-            return state[category];
+        return (categoryName: string) => {
+            return state[categoryName];
         };
     }
 };

@@ -1,0 +1,45 @@
+@import '../../scss/abstracts/functions';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
+
+.sprite-card {
+    background: saturate($card-default-background, 10%);
+    border: none;
+    border-radius: $card-default-border-radius;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+
+    $spriteCard: &;
+
+    &__image {
+        background: lighten(map-deep-get($colors, 'turqiouse', 'default'), 25%) no-repeat center center;
+        border-radius: 15px;
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        width: 100%;
+
+        &--alternate-1 {
+            background-color: lighten(map-deep-get($colors, 'blue', 'default'), 25%);
+        }
+
+        &--alternate-2 {
+            background-color: lighten(map-deep-get($colors, 'lemon', 'default'), 25%);
+        }
+    }
+
+    &__title {
+        bottom: 5px;
+        color: #ffffff;
+        font-size: rem-calc(16);
+        font-weight: 700;
+        left: 20px;
+        margin-bottom: 0;
+        max-width: 75%;
+        padding: 10px 0;
+        position: absolute;
+    }
+}

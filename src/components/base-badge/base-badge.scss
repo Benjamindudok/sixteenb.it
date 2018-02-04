@@ -1,0 +1,39 @@
+@import '../../scss/abstracts/functions';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
+
+.badge {
+    display: inline-block;
+    background: map-deep-get($colors, 'black', 'default');
+    border: 2px solid map-deep-get($colors, 'black', 'default');
+    border-radius: 3px;
+    color: map-deep-get($colors, 'white', 'default');
+    font-size: rem-calc(14);
+    line-height: rem-calc(16);
+    padding: 3px 5px;
+
+    &--ghost {
+        background: transparent;
+        color: map-deep-get($colors, 'black', 'default');
+
+        &:hover {
+            background: map-deep-get($colors, 'black', 'default');
+            color: map-deep-get($colors, 'white', 'default');
+        }
+    }
+
+    @each $colorName, $color in $badge-color-variants
+    {
+        &--#{$colorName} {
+            border-color: map-get($color, 'default');
+            background: map-get($color, 'default');
+            color: map-deep-get($colors, 'white', 'default');
+
+            &:hover {
+                border-color: map-get($color, 'light');
+                background: map-get($color, 'light');
+                color: map-deep-get($colors, 'white', 'default');
+            }
+        }
+    }
+}

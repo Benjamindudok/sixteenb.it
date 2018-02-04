@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from 'src/components/hello-world/HelloWorld.vue';
+import Listing from 'src/views/listing/listing.vue';
 
 Vue.use(Router);
 
@@ -8,8 +8,13 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+            name: 'Home',
+            component: Listing
+        },
+        {
+            path: '/:categoryName',
+            name: 'Home with category',
+            component: Listing
         }
     ]
 });

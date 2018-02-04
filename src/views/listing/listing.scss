@@ -1,0 +1,27 @@
+@import '../../scss/abstracts/_functions.scss';
+@import '../../scss/abstracts/_mixins.scss';
+
+.listing {
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    &__header {
+        line-height: rem-calc(24);
+        padding: 15px 0 30px;
+
+        &::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        line-height: rem-calc(24);
+    }
+
+    &__categories {
+        float: right;
+    }
+}
