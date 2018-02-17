@@ -2,16 +2,15 @@
 @import '../../scss/abstracts/mixins';
 @import '../../scss/abstracts/variables';
 
-.badge {
-    display: inline-block;
+.button {
     background: map-deep-get($colors, 'black', 'default');
     border: 2px solid map-deep-get($colors, 'black', 'default');
     border-radius: 3px;
     color: map-deep-get($colors, 'white', 'default');
+    display: inline-block;
     font-size: rem-calc(14);
     line-height: rem-calc(16);
-    margin: 0 15px 10px 0;
-    padding: 3px 5px;
+    padding: 8px 12px;
 
     &--ghost {
         background: transparent;

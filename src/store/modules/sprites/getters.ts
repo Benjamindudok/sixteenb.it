@@ -6,6 +6,7 @@ export interface ISpritesGetters
 {
     sprites: sixteenBit.IItem[];
     spritesInCategory: sixteenBit.IItem[];
+    spriteWithID: sixteenBit.IItem;
 }
 
 export const getters: GetterTree<ISpritesState, IStoreState> = {
@@ -21,6 +22,18 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
     {
         return (categoryName: string) => {
             return state[categoryName];
+        };
+    },
+
+    spriteWithID( state: ISpritesState ): Function
+    {
+        let sprites: sixteenBit.IItem[] = state.characters
+            .concat(state.environment)
+            .concat(state.ui)
+            .concat(state.items);
+
+        return (spriteID: string) => {
+            return sprites.filter((s: sixteenBit.IItem) => s.uuid === spriteID)[0];
         };
     }
 };

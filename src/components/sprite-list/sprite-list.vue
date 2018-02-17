@@ -4,6 +4,7 @@
                          :key="sprite.uuid"
                          :class="{'sprite-list__item': true}"
                          :name="sprite.name"
+                         :uuid="sprite.uuid"
                          :source="sprite.preview">
 
             </sprite-card>

@@ -21,7 +21,7 @@ export default class Listing extends Vue
     {
         if (this.$route.params.categoryName)
         {
-            return this.$store.getters.spritesInCategory(this.$route.params.categoryName)
+            return this.$store.getters.spritesInCategory(this.$route.params.categoryName);
         }
 
         return this.$store.getters.sprites;

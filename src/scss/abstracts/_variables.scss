@@ -40,11 +40,27 @@ $navbar-height: 64px;
 
 //
 // Badge Variables
-// Create variants of buttons
+// Create variants of badges
 $badge-color-variants: $colors;
 $badge-create-color-variants: true;
 
 // Badge Defaults
+$badge-default-background: map-deep-get($colors, 'blue', 'darker');
+$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
+$badge-default-color: map-deep-get($colors, 'white', 'default');
+$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
+
+$badge-font-family: $font-family;
+$badge-font-size: rem-calc(12);
+$badge-transition: $transition-default;
+
+//
+// Button Variables
+// Create variants of buttons
+$badge-color-variants: $colors;
+$badge-create-color-variants: true;
+
+// Button Defaults
 $badge-default-background: map-deep-get($colors, 'blue', 'darker');
 $badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
 $badge-default-color: map-deep-get($colors, 'white', 'default');
