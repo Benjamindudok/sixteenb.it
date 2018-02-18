@@ -6,7 +6,7 @@ import * as types from 'src/store/types';
 @Component
 export default class Sprite extends Vue
 {
-    get sprite(): string
+    get sprite(): sixteenBit.IItem
     {
         if (this.$route.params.spriteID)
         {
@@ -14,5 +14,15 @@ export default class Sprite extends Vue
         }
 
         return this.$store.getters.sprites;
+    }
+
+    get previewStyle(): any {
+        return {
+            'background-image': 'url(' + this.sprite.image + ')'
+        };
+    }
+
+    get previewAlt(): string {
+        return 'This is a preview of ' + this.sprite.name + '.png';
     }
 }

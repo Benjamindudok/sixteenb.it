@@ -14,6 +14,8 @@ declare namespace sixteenBit
         uuid: string;
         columns: number;
         rows: number;
+        preview: string;
+        image: string;
     }
 
     enum Categories {

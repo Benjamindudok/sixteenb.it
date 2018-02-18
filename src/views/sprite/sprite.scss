@@ -5,33 +5,44 @@
     padding-bottom: 30px;
     padding-top: 30px;
 
-    &__figure {
-        background: map-deep-get($colors, 'blue', 'default');
-        border-radius: 15px;
-        float: left;
-        margin: 0;
-        min-height: 300px;
-        overflow: hidden;
-        text-align: center;
-        width: 50%;
-
-        @include center-perfectly();
-    }
-
-    &__image {
-        display: inline-block;
-        max-width: 100%;
-        vertical-align: middle;
-    }
-
     &__details {
-        float: left;
-        padding: 0 30px 0 50px;
-        width: 50%;
+        margin-bottom: 30px;
+
+        &::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+
+        @include respond-to(medium) {
+            margin-bottom: 0;
+        }
     }
 
-    &__header {
-        padding: 0 0 15px;
+    &__content {
+        width: 100%;
+
+        @include respond-to(medium) {
+            float: left;
+            padding: 0 30px 0 50px;
+            width: 50%;
+        }
+    }
+
+    &__preview {
+        background: map-deep-get($colors, 'blue', 'default') no-repeat center center;
+        border-radius: 15px;
+        height: 0;
+        margin: 0 0 30px;
+        padding-bottom: 100%;
+        width: 100%;
+
+        @include respond-to(medium) {
+            float: left;
+            margin-bottom: 0;
+            padding-bottom: 50%;
+            width: 50%;
+        }
     }
 
     &__title {
@@ -39,12 +50,16 @@
     }
 
     &__download {
+        display: block;
+        font-size: rem-calc(18);
         margin: 20px 0;
-    }
+        padding: 20px;
+        width: 100%;
 
-    &::after {
-        clear: both;
-        content: '';
-        display: table;
+        @include respond-to(medium) {
+            font-size: rem-calc(14);
+            padding: inherit;
+            width: 50%;
+        }
     }
 }
