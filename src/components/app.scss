@@ -5,3 +5,22 @@
 @import '../scss/base/reset';
 @import '../scss/base/base';
 @import '../scss/base/typography';
+
+.app {
+    &__overlay-toggle {
+        color: map-deep-get($colors, 'blue', 'default');
+        cursor: pointer;
+        font-size: rem-calc(22);
+        font-weight: 700;
+        line-height: 20px;
+        padding: 22px 24px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        user-select: none;
+
+        @include respond-to(medium) {
+            display: none;
+        }
+    }
+}

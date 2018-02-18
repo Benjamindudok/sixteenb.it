@@ -1,0 +1,32 @@
+@import '../../scss/abstracts/functions';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
+
+.overlay {
+    background: map-deep-get($colors, 'white', 'default');
+    display: block;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include center-perfectly();
+
+    &__content {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__close {
+        color: map-deep-get($colors, 'blue', 'default');
+        cursor: pointer;
+        font-size: rem-calc(32);
+        font-weight: 700;
+        line-height: 20px;
+        padding: 22px 24px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        user-select: none;
+    }
+}
