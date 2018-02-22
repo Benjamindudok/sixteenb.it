@@ -7,7 +7,8 @@ import * as types from '../store/types';
 export default class App extends Vue
 {
     name: string = 'app';
-    showOverlay: boolean = true;
+    showNavigationOverlay: boolean = false;
+    showAboutOverlay: boolean = false;
 
     mounted(): void
     {

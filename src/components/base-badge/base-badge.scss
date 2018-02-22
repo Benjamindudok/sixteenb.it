@@ -4,7 +4,7 @@
 
 .badge {
     display: inline-block;
-    background: map-deep-get($colors, 'black', 'default');
+    background: $badge-default-background;
     border: 2px solid map-deep-get($colors, 'black', 'default');
     border-radius: 3px;
     color: map-deep-get($colors, 'white', 'default');

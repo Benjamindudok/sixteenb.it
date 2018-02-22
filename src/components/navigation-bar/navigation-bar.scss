@@ -51,8 +51,18 @@
     }
 
     &__link {
+        color: $color-anchor;
+        cursor: pointer;
         font-size: rem-calc(14);
         font-weight: 700;
         text-transform: uppercase;
+
+        &:hover {
+            color: $color-anchor-hover;
+        }
+
+        &:active, &:focus {
+            color: $color-anchor-focus;
+        }
     }
 }

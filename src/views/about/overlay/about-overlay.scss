@@ -1,0 +1,12 @@
+@import '../../../scss/abstracts/functions';
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/abstracts/variables';
+
+.about-overlay {
+    &__content {
+        margin: 0 auto;
+        max-width: 512px;
+        text-align: left;
+        width: 100%;
+    }
+}
