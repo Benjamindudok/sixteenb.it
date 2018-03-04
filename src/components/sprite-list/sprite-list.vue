@@ -25,12 +25,12 @@
         <sprite-card name="sample item" class="sprite-list__item" >item 14</sprite-card>
         <sprite-card name="sample item" class="sprite-list__item" >item 15</sprite-card>
 
-        <aside class="sprite-list__item sprite-list__aside sprite-list__item--colspan-6 sprite-list__item--rowspan-3">
-            <div class="sprite-list__text">
-                <h1>Text here</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in augue euismod, ullamcorper diam vitae, dapibus leo. Aliquam erat volutpat. Sed elementum finibus malesuada. Quisque eget gravida dui, et interdum.</p>
-            </div>
-        </aside>
+        <!--<aside class="sprite-list__item sprite-list__aside sprite-list__item&#45;&#45;colspan-6 sprite-list__item&#45;&#45;rowspan-3">-->
+            <!--<div class="sprite-list__text">-->
+                <!--<h1>Text here</h1>-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in augue euismod, ullamcorper diam vitae, dapibus leo. Aliquam erat volutpat. Sed elementum finibus malesuada. Quisque eget gravida dui, et interdum.</p>-->
+            <!--</div>-->
+        <!--</aside>-->
 
         <sprite-card name="sample item" class="sprite-list__item" >item 16</sprite-card>
         <sprite-card name="sample item" class="sprite-list__item sprite-list__item--colspan-3" >item 17</sprite-card>

@@ -7,6 +7,7 @@
 
         <sprite-list :sprites="sprites"></sprite-list>
 
+        <base-pagination :pages="amountOfPages" :current-page="currentPage"></base-pagination>
     </main>
 </template>
 

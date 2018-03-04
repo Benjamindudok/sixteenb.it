@@ -10,17 +10,19 @@ export interface ISpritesGetters
 }
 
 export const getters: GetterTree<ISpritesState, IStoreState> = {
-    sprites( state: ISpritesState ): sixteenBit.IItem[]
+    sprites( state: ISpritesState ): Function
     {
-        return state.characters
-            .concat(state.environment)
-            .concat(state.ui)
-            .concat(state.items);
+        return (page?: number) => {
+            return state.characters
+                .concat(state.environment)
+                .concat(state.ui)
+                .concat(state.items);
+        };
     },
 
     spritesInCategory( state: ISpritesState ): Function
     {
-        return (categoryName: string) => {
+        return (categoryName: string, page?: number) => {
             return state[categoryName];
         };
     },
