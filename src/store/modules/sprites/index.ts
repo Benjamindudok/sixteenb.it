@@ -12,6 +12,7 @@ export interface ISpritesState {
     characters: sixteenBit.IItem[];
     items: sixteenBit.IItem[];
     ui: sixteenBit.IItem[];
+    spritesPerPage: number;
 }
 
 export const sprites: Module<ISpritesState, IStoreState> = {
@@ -20,7 +21,8 @@ export const sprites: Module<ISpritesState, IStoreState> = {
         environment: [],
         characters: [],
         items: [],
-        ui: []
+        ui: [],
+        spritesPerPage: 0
     },
 
     getters: getters,

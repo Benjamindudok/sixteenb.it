@@ -21,14 +21,28 @@ export default class Listing extends Vue
     {
         if (this.$route.params.categoryName)
         {
-            return this.$store.getters.spritesInCategory(this.$route.params.categoryName);
+            return this.$store.getters.spritesInCategory(this.$route.params.categoryName, this.currentPage);
         }
 
-        return this.$store.getters.sprites();
+        return this.$store.getters.sprites(this.currentPage);
+    }
+
+    get amountOfSprites(): number {
+        if (this.$route.params.categoryName)
+        {
+            return this.$store.getters.spritesInCategory(this.$route.params.categoryName).length;
+        }
+
+        return this.$store.getters.sprites().length;
+    }
+
+    get amountOfSpritesPerPage(): number
+    {
+        return this.$store.getters.itemsPerPage;
     }
 
     get amountOfPages(): number
     {
-        return 30;
+        return this.amountOfSprites / this.amountOfSpritesPerPage;
     }
 }
