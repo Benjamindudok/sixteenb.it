@@ -32,7 +32,7 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
     spritesInCategory( state: ISpritesState ): Function
     {
         return (categoryName: string, page?: number) => {
-            let sprites: sixteenBit.IItem[] = state[categoryName] || [];
+            let sprites: sixteenBit.IItem[] = state[categoryName].slice() || [];
 
             if (page) {
                 return returnPagedSprites(sprites, state.spritesPerPage, page);
@@ -86,7 +86,7 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
 
 function returnPagedSprites(sprites: sixteenBit.IItem[], spritesPerPage: number, page: number): sixteenBit.IItem[]
 {
-    let start: number = spritesPerPage * page;
+    let start: number = spritesPerPage * (page - 1);
     return (sprites) ? sprites.splice(start, spritesPerPage) : [];
 }
 

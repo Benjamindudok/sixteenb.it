@@ -13,20 +13,7 @@ export default class SpriteList extends Vue
 
     get filteredSprites(): sixteenBit.IItem[]
     {
-            return this.sprites.filter((s) =>
-            {
-                if (this.selectedTags)
-                {
-                    return this.selectedTags.forEach((t) =>
-                    {
-                        return s.tags.includes(t.toString());
-                    });
-                }
-                else
-                {
-                    return true;
-                }
-            });
+            return this.sprites;
 
     }
 }

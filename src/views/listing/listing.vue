@@ -1,6 +1,5 @@
 <template>
     <main class="container listing">
-
         <header class="listing__header">
             <form class="listing__search form" @submit="search">
                 <div class="form__group">
