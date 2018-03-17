@@ -4,7 +4,7 @@ declare namespace sixteenBit
         environment: IItem[];
         characters: IItem[];
         items: IItem[];
-        ui: IItem[];
+        interface: IItem[];
     }
 
     interface IItem {

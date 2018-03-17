@@ -11,7 +11,7 @@ export interface ISpritesState {
     environment: sixteenBit.IItem[];
     characters: sixteenBit.IItem[];
     items: sixteenBit.IItem[];
-    ui: sixteenBit.IItem[];
+    interface: sixteenBit.IItem[];
     spritesPerPage: number;
 }
 
@@ -21,7 +21,7 @@ export const sprites: Module<ISpritesState, IStoreState> = {
         environment: [],
         characters: [],
         items: [],
-        ui: [],
+        interface: [],
         spritesPerPage: 0
     },
 

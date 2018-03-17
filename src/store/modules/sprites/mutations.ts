@@ -8,7 +8,7 @@ export const mutations: MutationTree<ISpritesState> = {
         state.environment = data.environment || [];
         state.items = data.items || [];
         state.characters = data.characters || [];
-        state.ui = data.ui || [];
+        state.interface = data.interface || [];
     },
 
     [types.UPDATE_PAGINATION](state: ISpritesState): void {

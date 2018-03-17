@@ -8,6 +8,8 @@ export default class Listing extends Vue
     currentPage: number = 1;
     itemsPerPage: number = 30;
 
+    searchKeyword: string = '';
+
     mounted(): void {
         this.onQueryChange();
     }
@@ -17,9 +19,23 @@ export default class Listing extends Vue
         this.currentPage = parseInt(this.$route.query.page) || 1;
     }
 
+    @Watch('$route.search')
+    onSearch(): void {
+        this.searchKeyword = this.$route.query.search || '';
+        this.currentPage = 1;
+    }
+
+    search(): void {
+        this.$router.push({ query: Object.assign({}, { search: this.searchKeyword }) });
+    }
+
     get sprites(): string
     {
-        if (this.$route.params.categoryName)
+        if (this.$route.query.search)
+        {
+            return this.$store.getters.searchForSpriteWithTag(this.$route.query.search, this.currentPage);
+        }
+        else if (this.$route.params.categoryName)
         {
             return this.$store.getters.spritesInCategory(this.$route.params.categoryName, this.currentPage);
         }
@@ -28,7 +44,11 @@ export default class Listing extends Vue
     }
 
     get amountOfSprites(): number {
-        if (this.$route.params.categoryName)
+        if (this.$route.query.search)
+        {
+            return this.$store.getters.searchForSpriteWithTag(this.$route.query.search).length;
+        }
+        else if (this.$route.params.categoryName)
         {
             return this.$store.getters.spritesInCategory(this.$route.params.categoryName).length;
         }

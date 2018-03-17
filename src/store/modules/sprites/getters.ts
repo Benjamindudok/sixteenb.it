@@ -8,24 +8,21 @@ export interface ISpritesGetters
     spritesInCategory: sixteenBit.IItem[];
     spriteWithID: sixteenBit.IItem;
     spritesPerPage: number;
+    searchForSpriteWithTag: sixteenBit.IItem[];
 }
 
 export const getters: GetterTree<ISpritesState, IStoreState> = {
     sprites( state: ISpritesState ): Function
     {
-        return (page?: number) => {
+        return (page?: number) =>
+        {
             let sprites: sixteenBit.IItem[] = state.characters
                 .concat(state.environment)
-                .concat(state.ui)
+                .concat(state.interface)
                 .concat(state.items);
 
             if (page) {
-                let start: number = state.spritesPerPage * (page - 1),
-                    pages: number = sprites.length / state.spritesPerPage;
-
-                if (sprites) {
-                    return sprites.splice(start, state.spritesPerPage);
-                }
+                return returnPagedSprites(sprites, state.spritesPerPage, page);
             }
 
             return sprites;
@@ -35,14 +32,10 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
     spritesInCategory( state: ISpritesState ): Function
     {
         return (categoryName: string, page?: number) => {
-            let sprites: sixteenBit.IItem[] = state[categoryName];
+            let sprites: sixteenBit.IItem[] = state[categoryName] || [];
 
             if (page) {
-                let start: number = state.spritesPerPage * page;
-
-                if (sprites) {
-                    return sprites.splice(start, state.spritesPerPage);
-                }
+                return returnPagedSprites(sprites, state.spritesPerPage, page);
             }
 
             return sprites;
@@ -53,17 +46,48 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
     {
         let sprites: sixteenBit.IItem[] = state.characters
             .concat(state.environment)
-            .concat(state.ui)
+            .concat(state.interface)
             .concat(state.items);
 
-        return (spriteID: string) => {
+        return (spriteID: string) =>
+        {
             return sprites.filter((s: sixteenBit.IItem) => s.uuid === spriteID)[0];
         };
     },
 
-    itemsPerPage(state: ISpritesState): number {
+    itemsPerPage(state: ISpritesState): number
+    {
         return state.spritesPerPage;
+    },
+
+    searchForSpriteWithTag(state: ISpritesState): Function
+    {
+        return (tag: any, page?: number): sixteenBit.IItem[] =>
+        {
+            let sprites: sixteenBit.IItem[] = state.characters
+                .concat(state.environment)
+                .concat(state.interface)
+                .concat(state.items);
+
+            sprites = sprites.filter((s: sixteenBit.IItem) =>
+            {
+                let tags: string[] = s.tags.join('|').toLowerCase().split('|');
+                return (tags.indexOf(tag.toLowerCase()) > -1);
+            });
+
+            if (page) {
+                return returnPagedSprites(sprites, state.spritesPerPage, page);
+            }
+
+            return sprites;
+        };
     }
 };
+
+function returnPagedSprites(sprites: sixteenBit.IItem[], spritesPerPage: number, page: number): sixteenBit.IItem[]
+{
+    let start: number = spritesPerPage * page;
+    return (sprites) ? sprites.splice(start, spritesPerPage) : [];
+}
 
 export default getters;

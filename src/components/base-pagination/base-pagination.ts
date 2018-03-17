@@ -50,4 +50,12 @@ export default class BasePagination extends Vue
             return newArray;
         };
     }
+
+    get pageUrl(): Function
+    {
+        return (page: number): any =>
+        {
+            return { query: Object.assign({}, this.$route.query, { page: page }) };
+        };
+    }
 }
