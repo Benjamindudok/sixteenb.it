@@ -33,7 +33,7 @@ export default class Listing extends Vue
     {
         if (this.$route.query.search)
         {
-            return this.$store.getters.searchForSpriteWithTag(this.$route.query.search, this.currentPage);
+            return this.$store.getters.searchForSprite(this.$route.query.search, this.currentPage);
         }
         else if (this.$route.params.categoryName)
         {
@@ -46,7 +46,7 @@ export default class Listing extends Vue
     get amountOfSprites(): number {
         if (this.$route.query.search)
         {
-            return this.$store.getters.searchForSpriteWithTag(this.$route.query.search).length;
+            return this.$store.getters.searchForSprite(this.$route.query.search).length;
         }
         else if (this.$route.params.categoryName)
         {

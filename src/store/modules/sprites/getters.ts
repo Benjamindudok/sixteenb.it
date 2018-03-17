@@ -8,7 +8,7 @@ export interface ISpritesGetters
     spritesInCategory: sixteenBit.IItem[];
     spriteWithID: sixteenBit.IItem;
     spritesPerPage: number;
-    searchForSpriteWithTag: sixteenBit.IItem[];
+    searchForSprite: sixteenBit.IItem[];
 }
 
 export const getters: GetterTree<ISpritesState, IStoreState> = {
@@ -22,7 +22,7 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
                 .concat(state.items);
 
             if (page) {
-                return returnPagedSprites(sprites, state.spritesPerPage, page);
+                return getPagedSprites(sprites, state.spritesPerPage, page);
             }
 
             return sprites;
@@ -35,7 +35,7 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
             let sprites: sixteenBit.IItem[] = state[categoryName].slice() || [];
 
             if (page) {
-                return returnPagedSprites(sprites, state.spritesPerPage, page);
+                return getPagedSprites(sprites, state.spritesPerPage, page);
             }
 
             return sprites;
@@ -60,31 +60,38 @@ export const getters: GetterTree<ISpritesState, IStoreState> = {
         return state.spritesPerPage;
     },
 
-    searchForSpriteWithTag(state: ISpritesState): Function
+    searchForSprite(state: ISpritesState): Function
     {
-        return (tag: any, page?: number): sixteenBit.IItem[] =>
+        return (keywords: any, page?: number): sixteenBit.IItem[] =>
         {
             let sprites: sixteenBit.IItem[] = state.characters
                 .concat(state.environment)
                 .concat(state.interface)
                 .concat(state.items);
 
-            sprites = sprites.filter((s: sixteenBit.IItem) =>
-            {
-                let tags: string[] = s.tags.join('|').toLowerCase().split('|');
-                return (tags.indexOf(tag.toLowerCase()) > -1);
+            let results: sixteenBit.IItem[] = [],
+                _keywords: string[] = keywords.split(' ');
+
+            _keywords.forEach((keyword) => {
+                results = results
+                    .concat(sprites.filter((s) => s.name.toLowerCase().indexOf(keyword.toLowerCase()) != -1))
+                    .concat(sprites.filter((s) =>
+                    {
+                        let tags: string[] = s.tags.join('|').toLowerCase().split('|');
+                        return tags.indexOf(keyword.toLowerCase()) != -1;
+                    }));
             });
 
             if (page) {
-                return returnPagedSprites(sprites, state.spritesPerPage, page);
+                return getPagedSprites(results, state.spritesPerPage, page);
             }
 
-            return sprites;
+            return results;
         };
     }
 };
 
-function returnPagedSprites(sprites: sixteenBit.IItem[], spritesPerPage: number, page: number): sixteenBit.IItem[]
+function getPagedSprites(sprites: sixteenBit.IItem[], spritesPerPage: number, page: number): sixteenBit.IItem[]
 {
     let start: number = spritesPerPage * (page - 1);
     return (sprites) ? sprites.splice(start, spritesPerPage) : [];
