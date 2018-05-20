@@ -6,8 +6,11 @@
     padding-top: 30px;
 
     &__header {
-        max-width: 60%;
         padding: 60px 0 50px;
+
+        @include respond-to(medium) {
+            max-width: 60%;
+        }
 
         &::after {
             content: '';
