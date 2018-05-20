@@ -3,7 +3,8 @@
 import Vue from 'vue';
 
 // Vue components
-import App from 'src/components/App.vue';
+import App from 'src/components/app.vue';
+import AppFooter from 'src/components/app-footer/app-footer.vue';
 import AboutOverlay from 'src/views/about/overlay/about-overlay.vue';
 import BaseBadge from 'src/components/base-badge/base-badge.vue';
 import BaseButton from 'src/components/base-button/base-button.vue';
@@ -24,6 +25,7 @@ import store from 'src/store/';
 
 Vue.config.productionTip = false;
 
+Vue.component('app-footer', AppFooter);
 Vue.component('about-overlay', AboutOverlay);
 Vue.component('base-badge', BaseBadge);
 Vue.component('base-button', BaseButton);

@@ -112,6 +112,16 @@ $sprite-card-title-color: $color-text;
 $sprite-card-title-font-size: rem-calc(18);
 $sprite-card-title-font-weight: $global-font-weight-bold;
 
+// Footer
+$footer-background-color: map-deep-get($colors, 'grey', 'light');
+$footer-border-color: transparent;
+$footer-border-width: 2px;
+$footer-font-size: rem-calc(14);
+$footer-grid-gap: 100px;
+$footer-title-color: $color-text;
+$footer-title-font-size: rem-calc(16);
+$footer-title-font-weight: $global-font-weight-bold;
+
 // Forms
 $form-control-border-color: $color-border;
 $form-control-border-color-highlight: $color-secondary;

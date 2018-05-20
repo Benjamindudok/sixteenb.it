@@ -3,9 +3,7 @@
 
         <header class="listing__header">
         <h1>A repository of free-to-use pixel art</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-            Pellentesque ut magna mattis, accumsan massa at, maximus arcu. Donec semper ligula nisl, eu laoreet dui hendrerit eu.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut magna mattis, accumsan massa at, maximus arcu. Donec semper ligula nisl, eu laoreet dui hendrerit eu.</p>
         </header>
 
         <div class="listing__filters">

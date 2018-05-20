@@ -6,6 +6,8 @@
 
         <router-view></router-view>
 
+        <app-footer></app-footer>
+
         <navigation-overlay @close="showNavigationOverlay = false"
                             @show-about="showAboutOverlay = true"
                             :show="showNavigationOverlay"></navigation-overlay>
