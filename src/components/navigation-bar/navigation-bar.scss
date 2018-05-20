@@ -5,8 +5,7 @@
 .navigation-bar {
     height: 64px;
     line-height: 20px;
-    margin: 12px 0;
-    padding: 22px 0;
+    padding: 60px 0 30px;
     position: relative;
     width: 100%;
 
@@ -15,7 +14,7 @@
         float: left;
         font-family: $header-family;
         font-size: rem-calc(24);
-        font-weight: 900;
+        font-weight: 700;
         margin: 0 30px 0 0;
         padding: 0 30px 0 0;
     }
@@ -51,8 +50,13 @@
     }
 
     &__link {
+        color: $color-text;
         font-size: rem-calc(14);
         font-weight: 700;
         text-transform: uppercase;
+
+        &--isActive {
+            color: $color-secondary;
+        }
     }
 }
