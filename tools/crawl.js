@@ -79,8 +79,8 @@ function readFile(filePath, directoryName)
         fileContent.uuid = uuidv1();
 
         // add file url
-        fileContent.preview = filePath.replace('.json', '.png').replace(jetpack.cwd(), '').split('\\').join('/');
-        fileContent.image = filePath.replace('.json', '.png').replace(jetpack.cwd(), '').split('\\').join('/');
+        fileContent.preview = filePath.replace('.json', '.png').replace(jetpack.cwd(path.resolve(__dirname, distDirectory)).path(), '').split('\\').join('/');
+        fileContent.image = filePath.replace('.json', '.png').replace(jetpack.cwd(path.resolve(__dirname, distDirectory)).path(), '').split('\\').join('/');
 
         // create category if needed
         if (!content[directoryName])
