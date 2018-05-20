@@ -4,7 +4,7 @@
 
 html, body {
     background: map-deep-get($colors, 'white', 'default');
-    font-family: $font-family;
+    font-family: $global-font-family;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4rem;
@@ -22,7 +22,7 @@ html, body {
 
     @include respond-to(xxlarge) {
         margin: 0 auto;
-        max-width: 1440px;
+        max-width: $global-max-width;
         padding: 0 40px;
         width: 100%;
     }

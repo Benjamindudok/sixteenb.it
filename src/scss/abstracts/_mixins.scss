@@ -48,3 +48,13 @@
         margin-right: -.25rem; /* Adjusts for spacing */
     }
 }
+
+/// Clear floats of container element
+/// @access public
+@mixin clear-float() {
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}

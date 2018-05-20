@@ -22,20 +22,20 @@
     }
 
     &__link {
-        background: map-deep-get($colors, 'blue', 'default');
-        border-radius: 5px;
-        color: map-deep-get($colors, 'white', 'default');
+        background: $pagination-link-background-color;
+        border-radius: $pagination-link-border-radius;
+        color: $pagination-link-color;
         display: block;
         padding: 5px 15px;
 
         &:hover, &:focus {
-            background: map-deep-get($colors, 'blue', 'light');
-            color: map-deep-get($colors, 'white', 'default');
+            background: $pagination-link-background-color-hover;
+            color: $pagination-link-color-hover;
         }
 
         &--isCurrent {
-            background: map-deep-get($colors, 'blue', 'light');
-            color: map-deep-get($colors, 'white', 'default');
+            background: $pagination-link-background-color-active;
+            color: $pagination-link-color-active;
         }
     }
 }

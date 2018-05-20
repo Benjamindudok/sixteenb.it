@@ -23,5 +23,9 @@
         @include respond-to(medium) {
             display: none;
         }
+
+        &:hover {
+            color: map-deep-get($colors, 'blue', 'light');
+        }
     }
 }

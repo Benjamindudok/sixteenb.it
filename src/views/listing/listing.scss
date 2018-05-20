@@ -6,6 +6,17 @@
     padding-top: 30px;
 
     &__header {
+        max-width: 60%;
+        padding: 60px 0 50px;
+
+        &::after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+    }
+
+    &__filters {
         line-height: rem-calc(24);
         padding: 15px 0 30px;
 
@@ -23,6 +34,7 @@
 
     &__categories {
         float: right;
+        margin-top: 6px;
     }
 
     &__search {

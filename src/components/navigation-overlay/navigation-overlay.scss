@@ -3,6 +3,8 @@
 @import '../../scss/abstracts/variables';
 
 .navigation-overlay {
+    text-align: center;
+
     &__list {
         list-style: none;
         margin: 0;
@@ -11,6 +13,11 @@
 
     &__item {
         margin: 0;
+        padding: 10px 0;
+
+        &--spaced {
+            padding-top: 30px;
+        }
     }
 
     &__link {

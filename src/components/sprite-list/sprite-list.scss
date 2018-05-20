@@ -10,7 +10,8 @@
     grid-gap: 30px;
     grid-auto-rows: minmax(175px, auto);
     grid-auto-flow: dense;
-    color: #444444;
+
+    @include clear-float();
 
     &__item {
         border-radius: 10px;
@@ -81,11 +82,5 @@
         @include respond-to(medium) {
             max-width: 512px;
         }
-    }
-
-    &::after {
-        content: '';
-        clear: both;
-        display: table;
     }
 }

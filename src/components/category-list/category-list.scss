@@ -5,12 +5,10 @@
 .category-list {
     display: inline-block;
     list-style: none;
-    margin: 0;
     padding: 0;
     text-align: right;
 
     &__item {
-        color: map-deep-get($colors, 'blue', 'default');
         display: inline-block;
         margin: 0 0 0 20px;
         padding: 0;
@@ -18,15 +16,9 @@
         &:first-child {
             margin-left: 0;
         }
-
-        &--active {
-            color: map-deep-get($colors, 'blue', 'default');
-        }
     }
 
     &__link {
-        color: map-deep-get($colors, 'blue', 'default');
-
         &--active {
             color: map-deep-get($colors, 'blue', 'default');
         }

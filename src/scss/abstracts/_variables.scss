@@ -1,14 +1,11 @@
-//
-// Typography
+// Variables
+// Mainly colors and some other visual properties
+// Colors should be defined here, or use named colors in other files instead of map-gets
 
-$header-family: 'Poppins', sans-serif;
-$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$font-size-base: 16px;
-
-//
 // Breakpoints
 $breakpoints: ('small': 0, 'medium': 640px, 'large': 1024px, 'xlarge': 1200px, 'xxlarge': 1440px);
 
+$global-max-width: 1170px;
 $global-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 $global-font-family-header: 'Poppins', sans-serif;
 $global-font-size: 16px;
@@ -19,12 +16,13 @@ $global-font-weight-bold: 700;
 //
 // Colors
 $colors: (
-    'black': ('dark': darken(#030303, 5%), 'default': #030303, 'light': lighten(#030303, 5%)),
+    'black': ('dark': #000000, 'default': #030303),
     'blue': ('dark': #062743, 'default': #113a5d, 'light': lighten(#113a5d, 20%)),
+    'grey': ('darker': #333333, 'dark': #888888, 'default': #cccccc, 'light': #eeeeee),
     'lemon': ('dark': darken(#bcdd24, 5%), 'default': #bcdd24, 'light': lighten(#bcdd24, 10%)),
     'red': ('dark': darken(#ff7a8a, 10%), 'default': #ff7a8a, 'light': lighten(#ff7a8a, 20%)),
     'turqiouse': ('dark': darken(#41d0a3, 5%), 'default': #41d0a3, 'light': lighten(#41d0a3, 10%)),
-    'white': ('dark': #ededed, 'default': #f9f9f9, 'light': #ffffff)
+    'white': ('default': #f9f9f9, 'light': #ffffff)
 );
 
 $color-primary-dark: map-deep-get($colors, 'blue', 'dark');
@@ -39,64 +37,85 @@ $color-warning-dark: map-deep-get($colors, 'red', 'dark');
 $color-warning: map-deep-get($colors, 'red', 'default');
 $color-warning-light: map-deep-get($colors, 'red', 'light');
 
-$color-text: map-deep-get($colors, 'black', 'light');
+$color-text: map-deep-get($colors, 'grey', 'darker');
 $color-header: $color-text;
 $color-header-alternate: map-deep-get($colors, 'blue', 'default');
-$color-anchor: map-deep-get($colors, 'lemon', 'default');
-$color-anchor-hover: map-deep-get($colors, 'lemon', 'light');
-$color-anchor-focus: map-deep-get($colors, 'lemon', 'default');
+$color-anchor: map-deep-get($colors, 'turqiouse', 'default');
+$color-anchor-hover: map-deep-get($colors, 'turqiouse', 'light');
+$color-anchor-focus: map-deep-get($colors, 'turqiouse', 'default');
 $color-border: map-deep-get($colors, 'black', 'default');
+
+$color-sets: (
+    'warning': (
+        'default': $color-warning,
+        'hover': $color-secondary-light
+    ),
+    'disabled': (
+        'default': map-deep-get($colors, 'grey', 'default'),
+        'hover': map-deep-get($colors, 'grey', 'light')
+    )
+);
 
 //
 // Transition defaults
-$transition-default-smoothing: cubic-bezier(.23, 1, .32, 1);
-$transition-default-time: .2s;
-$transition-default: all $transition-default-time $transition-default-smoothing;
+$transition-smoothing: cubic-bezier(.23, 1, .32, 1);
+$transition-time: .2s;
+$transition: all $transition-time $transition-smoothing;
 
-//
-// Layout
-$navbar-height: 64px;
+// Badge
+$badge-background: map-deep-get($colors, 'grey', 'default');
+$badge-background-hover: map-deep-get($colors, 'grey', 'light');
+$badge-border-color: map-deep-get($colors, 'grey', 'default');
+$badge-border-color-hover: map-deep-get($colors, 'grey', 'light');
+$badge-border-radius: 3px;
+$badge-border-width: 2px;
+$badge-color: map-deep-get($colors, 'white', 'default');
+$badge-font-size: rem-calc(14);
+$badge-line-height: rem-calc(18);
+$badge-transition: $transition;
 
-//
-// Badge Variables
-// Create variants of badges
-$badge-color-variants: $colors;
-$badge-create-color-variants: true;
+// Button
+$button-background: map-deep-get($colors, 'grey', 'default');
+$button-background-hover: map-deep-get($colors, 'grey', 'light');
+$button-border-color: map-deep-get($colors, 'grey', 'default');
+$button-border-color-hover: map-deep-get($colors, 'grey', 'light');
+$button-border-radius: 3px;
+$button-border-width: 2px;
+$button-color: map-deep-get($colors, 'white', 'default');
+$button-font-size: rem-calc(14);
+$button-line-height: rem-calc(18);
+$button-transition: $transition;
 
-// Badge Defaults
-$badge-default-background: map-deep-get($colors, 'blue', 'darker');
-$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
-$badge-default-color: map-deep-get($colors, 'white', 'default');
-$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
+// Overlay
+$overlay-background: map-deep-get($colors, 'white', 'default');
+$overlay-close-color: map-deep-get($colors, 'blue', 'default');
+$overlay-close-color-hover: map-deep-get($colors, 'blue', 'light');
+$overlay-close-transition: $transition;
+$overlay-transition: $transition;
 
-$badge-font-family: $font-family;
-$badge-font-size: rem-calc(12);
-$badge-transition: $transition-default;
+// Pagination
+$pagination-link-background-color: map-deep-get($colors, 'blue', 'default');
+$pagination-link-background-color-hover: map-deep-get($colors, 'blue', 'light');
+$pagination-link-background-color-active: map-deep-get($colors, 'blue', 'light');
+$pagination-link-border-radius: 5px;
+$pagination-link-color: map-deep-get($colors, 'white', 'default');
+$pagination-link-color-hover: map-deep-get($colors, 'white', 'default');
+$pagination-link-color-active: map-deep-get($colors, 'white', 'default');
 
-//
-// Button Variables
-// Create variants of buttons
-$badge-color-variants: $colors;
-$badge-create-color-variants: true;
+// Sprite Card
+$sprite-card-background: transparent;
+$sprite-card-border-color: transparent;
+$sprite-card-border-width: 0;
+$sprite-card-border-radius: 3px;
+$sprite-card-image-background-color: map-deep-get($colors, 'grey', 'light');
+$sprite-card-title-color: $color-text;
+$sprite-card-title-font-size: rem-calc(18);
+$sprite-card-title-font-weight: $global-font-weight-bold;
 
-// Button Defaults
-$badge-default-background: map-deep-get($colors, 'blue', 'darker');
-$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
-$badge-default-color: map-deep-get($colors, 'white', 'default');
-$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
-
-$badge-font-family: $font-family;
-$badge-font-size: rem-calc(12);
-$badge-transition: $transition-default;
-
-//
-// Card Variables
-$card-default-background: transparent;
-$card-default-border-color: transparent;
-$card-default-border-highlight: map-deep-get($colors, 'blue', 'default');
-$card-default-border-width: 5px;
-$card-default-border-radius: 3px;
-$card-default-padding: 20px 30px 30px;
-$card-default-title-color: $color-text;
-$card-default-content-color: map-deep-get($colors, 'white', 'darkest');
-$card-default-meta-color: $color-text;
+// Forms
+$form-control-border-color: $color-border;
+$form-control-border-color-highlight: $color-secondary;
+$form-control-border-width: 2px;
+$form-control-font-color: $color-text;
+$form-control-line-height: rem-calc(24);
+$form-control-padding: 6px 20px;

@@ -7,10 +7,7 @@
             <li class="navigation-overlay__item" @click="showAbout">
                 <span class="navigation-overlay__link">About</span>
             </li>
-            <li class="navigation-overlay__item">
-
-            </li>
-            <li class="navigation-overlay__item" @click="close">
+            <li class="navigation-overlay__item navigation-overlay__item--spaced" @click="close">
                 <router-link to="/" class="navigation-overlay__link">Donate</router-link>
             </li>
         </ul>

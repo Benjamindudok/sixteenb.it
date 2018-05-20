@@ -3,16 +3,24 @@
 @import '../../scss/abstracts/variables';
 
 .badge {
+    background: $badge-background;
+    border: $badge-border-width solid $badge-border-color;
+    border-radius: $badge-border-radius;
+    color: $badge-color;
     display: inline-block;
-    background: $badge-default-background;
-    border: 2px solid map-deep-get($colors, 'black', 'default');
-    border-radius: 3px;
-    color: map-deep-get($colors, 'white', 'default');
-    font-size: rem-calc(14);
-    line-height: rem-calc(16);
+    font-size: $badge-font-size;
+    line-height: $badge-line-height;
     margin: 0 15px 10px 0;
     padding: 3px 5px;
     text-align: center;
+    transition: $badge-transition;
+
+    $badge: &;
+
+    &:hover {
+        background-color: $badge-background-hover;
+        border-color: $badge-border-color-hover;
+    }
 
     &--ghost {
         background: transparent;
@@ -24,7 +32,7 @@
         }
     }
 
-    @each $colorName, $color in $badge-color-variants
+    @each $colorName, $color in $color-sets
     {
         &--#{$colorName} {
             border-color: map-get($color, 'default');
@@ -32,9 +40,21 @@
             color: map-deep-get($colors, 'white', 'default');
 
             &:hover {
-                border-color: map-get($color, 'light');
-                background: map-get($color, 'light');
+                border-color: map-get($color, 'hover');
+                background: map-get($color, 'hover');
                 color: map-deep-get($colors, 'white', 'default');
+            }
+
+            &#{$badge}--ghost {
+                background: transparent;
+                border-color: map-get($color, 'default');
+                color: map-get($color, 'default');
+
+                &:hover {
+                    background: transparent;
+                    border-color: map-get($color, 'hover');
+                    color: map-get($color, 'hover');
+                }
             }
         }
     }

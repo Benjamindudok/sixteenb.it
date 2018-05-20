@@ -13,18 +13,18 @@
         padding: 6px 20px;
         position: absolute;
         top: 0;
-        transition: $transition-default;
+        transition: $transition;
         width: 100%;
 
         &::before {
-            border-bottom: 3px solid $color-border;
+            border-bottom: $form-control-border-width solid $form-control-border-color-highlight;
             content: '';
             display: block;
             height: 100%;
             left: 0;
             position: absolute;
             top: 0;
-            transition: $transition-default;
+            transition: $transition;
             width: 0;
         }
     }
@@ -32,10 +32,10 @@
     &__control {
         background: transparent;
         border: none;
-        border-bottom: 3px solid rgba($color-text-grey, .3);
-        color: $color-text-grey;
-        line-height: rem-calc(24);
-        padding: 6px 20px;
+        border-bottom: $form-control-border-width solid $form-control-border-color;
+        color: $form-control-font-color;
+        line-height: $form-control-line-height;
+        padding: $form-control-padding;
 
         &--isTouched, &:focus {
             outline: none;

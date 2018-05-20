@@ -10,6 +10,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    transition: $overlay-transition;
 
     @include respond-to(medium) {
         @include center-perfectly();
@@ -35,6 +36,11 @@
         position: absolute;
         right: 10px;
         top: 10px;
+        transition: $overlay-close-transition;
         user-select: none;
+
+        &:hover {
+            color: $overlay-close-color-hover;
+        }
     }
 }

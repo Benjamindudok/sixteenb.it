@@ -82,6 +82,6 @@
 /// @access public
 /// @param {Size} $size - Size in px
 @function rem-calc($size) {
-    $remSize: strip-unit($size) / strip-unit($font-size-base);
+    $remSize: strip-unit($size) / strip-unit($global-font-size);
     @return #{$remSize}rem;
 }
