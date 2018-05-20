@@ -8,7 +8,7 @@ const uuidv1 = require('uuid/v4');
 let content = {},
     totalFileSize = 0;
 
-let contentDirectory = '../content',
+let contentDirectory = '../static/content/',
     distDirectory = '../static/',
     targetFile = 'content.json';
 
@@ -29,22 +29,24 @@ function readDirectoryRecursively(directoryPath, callback)
     let directory = jetpack.cwd(path.resolve(__dirname, directoryPath)),
         directoryContents = directory.list();
 
-    for (let i = 0; i < directoryContents.length; i++)
-    {
-        let item = directoryContents[i];
+    if (jetpack.exists(directory.path()) === 'dir') {
+        for (let i = 0; i < directoryContents.length; i++)
+        {
+            let item = directoryContents[i];
 
-        let itemNameInChunks = item.split('.');
-        if (itemNameInChunks.length === 1)
-        {
-            //Move into child folder
-            readDirectoryRecursively(directory.cwd() + '\\' + item, null);
-        }
-        else
-        {
-            // read json files only
-            if (itemNameInChunks[itemNameInChunks.length - 1] === 'json')
+            let itemNameInChunks = item.split('.');
+            if (itemNameInChunks.length === 1)
             {
-                readFile(directory.cwd() + '\\' + item, getCurrentDirectoryName(directory.cwd()));
+                //Move into child folder
+                readDirectoryRecursively(path.join(directory.cwd(), item), null);
+            }
+            else
+            {
+                // read json files only
+                if (itemNameInChunks[itemNameInChunks.length - 1] === 'json')
+                {
+                    readFile(path.join(directory.cwd(), item), getCurrentDirectoryName(directory.cwd()));
+                }
             }
         }
     }
@@ -99,6 +101,6 @@ function readFile(filePath, directoryName)
 
 function getCurrentDirectoryName(directoryPath)
 {
-    let directoryPathInChunks = directoryPath.split('\\');
+    let directoryPathInChunks = directoryPath.split(path.sep);
     return directoryPathInChunks[directoryPathInChunks.length - 1];
 }
