@@ -99,7 +99,7 @@ $overlay-background: map-deep-get($colors, 'white', 'default');
 $overlay-close-color: map-deep-get($colors, 'blue', 'default');
 $overlay-close-color-hover: map-deep-get($colors, 'blue', 'light');
 $overlay-close-transition: $transition;
-$overlay-transition: $transition;
+$overlay-transition: all .3s $transition-smoothing;
 
 // Pagination
 $pagination-link-background-color: map-deep-get($colors, 'blue', 'default');
