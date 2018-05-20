@@ -3,25 +3,44 @@
 
 $header-family: 'Poppins', sans-serif;
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$font-size-base: 16;
+$font-size-base: 16px;
 
 //
 // Breakpoints
-// Make sure these are the same as foundation's breakpoints!
-$breakpoints: ('small': 0, 'medium': 640px, 'large': 1024px, 'xlarge': 1200px, 'xxlarge': 1440px,);
+$breakpoints: ('small': 0, 'medium': 640px, 'large': 1024px, 'xlarge': 1200px, 'xxlarge': 1440px);
+
+$global-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$global-font-family-header: 'Poppins', sans-serif;
+$global-font-size: 16px;
+$global-font-weight-light: 300;
+$global-font-weight-normal: 400;
+$global-font-weight-bold: 700;
 
 //
 // Colors
 $colors: (
     'black': ('dark': darken(#030303, 5%), 'default': #030303, 'light': lighten(#030303, 5%)),
-    'blue': ('dark': darken(#1accca, 5%), 'default': #1accca, 'light': lighten(#1accca, 10%)),
-    'turqiouse': ('dark': darken(#41d0a3, 5%), 'default': #41d0a3, 'light': lighten(#41d0a3, 10%)),
+    'blue': ('dark': #062743, 'default': #113a5d, 'light': lighten(#113a5d, 20%)),
     'lemon': ('dark': darken(#bcdd24, 5%), 'default': #bcdd24, 'light': lighten(#bcdd24, 10%)),
-    'white': ('dark': #ededed, 'default': #f4f4f4, 'light': #ffffff)
+    'red': ('dark': darken(#ff7a8a, 10%), 'default': #ff7a8a, 'light': lighten(#ff7a8a, 20%)),
+    'turqiouse': ('dark': darken(#41d0a3, 5%), 'default': #41d0a3, 'light': lighten(#41d0a3, 10%)),
+    'white': ('dark': #ededed, 'default': #f9f9f9, 'light': #ffffff)
 );
 
-$color-text-grey: map-deep-get($colors, 'black', 'light');
-$color-header: $color-text-grey;
+$color-primary-dark: map-deep-get($colors, 'blue', 'dark');
+$color-primary: map-deep-get($colors, 'blue', 'default');
+$color-primary-light: map-deep-get($colors, 'blue', 'light');
+
+$color-secondary-dark: map-deep-get($colors, 'turqiouse', 'dark');
+$color-secondary: map-deep-get($colors, 'turqiouse', 'default');
+$color-secondary-light: map-deep-get($colors, 'turqiouse', 'light');
+
+$color-warning-dark: map-deep-get($colors, 'red', 'dark');
+$color-warning: map-deep-get($colors, 'red', 'default');
+$color-warning-light: map-deep-get($colors, 'red', 'light');
+
+$color-text: map-deep-get($colors, 'black', 'light');
+$color-header: $color-text;
 $color-header-alternate: map-deep-get($colors, 'blue', 'default');
 $color-anchor: map-deep-get($colors, 'lemon', 'default');
 $color-anchor-hover: map-deep-get($colors, 'lemon', 'light');
@@ -78,6 +97,6 @@ $card-default-border-highlight: map-deep-get($colors, 'blue', 'default');
 $card-default-border-width: 5px;
 $card-default-border-radius: 3px;
 $card-default-padding: 20px 30px 30px;
-$card-default-title-color: $color-text-grey;
+$card-default-title-color: $color-text;
 $card-default-content-color: map-deep-get($colors, 'white', 'darkest');
-$card-default-meta-color: $color-text-grey;
+$card-default-meta-color: $color-text;

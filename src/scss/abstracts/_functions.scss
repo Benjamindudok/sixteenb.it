@@ -46,7 +46,7 @@
         $current-get: map-get($current-map, $current-key);
 
         @if $current-get == null {
-            @error 'Key `#{$key}` doesnt exist at current level in map.';
+            @error 'Key `#{$current-key}` doesnt exist at current level in map.';
         }
 
         $maps: append($maps, $current-get);
@@ -65,11 +65,23 @@
     @return $result;
 }
 
+/// Remove the unit of a length
+/// @source https://css-tricks.com/snippets/sass/strip-unit-function/
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
 /// Calculate REM value
 /// @source http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
 /// @access public
 /// @param {Size} $size - Size in px
 @function rem-calc($size) {
-    $remSize: $size / $font-size-base;
+    $remSize: strip-unit($size) / strip-unit($font-size-base);
     @return #{$remSize}rem;
 }

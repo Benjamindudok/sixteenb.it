@@ -1,5 +1,5 @@
 {
-    "ignoreFiles": [ "./src/scss/base/_reset.scss", "./src/scss/_shame.scss", "./src/scss/vendors/**/*.scss" ],
+    "ignoreFiles": [ "./src/scss/_shame.scss", "./src/scss/vendors/**/*.scss" ],
     "rules": {
     "at-rule-name-case": "lower",
         "at-rule-name-space-after": "always",
