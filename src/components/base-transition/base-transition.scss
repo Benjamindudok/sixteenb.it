@@ -1,0 +1,87 @@
+@import '../../scss/abstracts/functions';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
+
+.fade {
+    &--enter {
+        // Starting state for enter. Added before element is inserted, removed one frame after element is inserted
+    }
+
+    &--enter-active {
+        // Active state for enter. Applied during the entire entering phase. Added before element is inserted, removed when transition/animation finishes. This class can be used to define the duration, delay and easing curve for the entering transition.
+        opacity: 0;
+    }
+
+    &--enter-to {
+        // Ending state for enter. Added one frame after element is inserted (at the same time v-enter is removed), removed when transition/animation finishes.
+        opacity: 1;
+        transition: $transition;
+    }
+
+    &--leave {
+        // Starting state for leave. Added immediately when a leaving transition is triggered, removed after one frame.
+    }
+
+    &--leave-active {
+        // Active state for leave. Applied during the entire leaving phase. Added immediately when leave transition is triggered, removed when the transition/animation finishes. This class can be used to define the duration, delay and easing curve for the leaving transition.
+        opacity: 1;
+        transition: $transition;
+    }
+
+    &--leave-to {
+        // Ending state for leave. Added one frame after a leaving transition is triggered (at the same time v-leave is removed), removed when the transition/animation finishes.
+        opacity: 0;
+    }
+}
+
+.slide-from-left {
+    &--enter-active, &--leave-to {
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
+    }
+
+    &--enter-to, &--leave-active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: $transition;
+    }
+}
+
+.slide-from-right {
+    &--enter-active, &--leave-to {
+        opacity: 0;
+        transform: translate3d(30px, 0, 0);
+    }
+
+    &--enter-to, &--leave-active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: $transition;
+    }
+}
+
+.slide-from-top {
+    &--enter-active, &--leave-to {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+
+    &--enter-to, &--leave-active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: $transition;
+    }
+}
+
+.slide-from-bottom {
+    &--enter-active, &--leave-to {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+
+    &--enter-to, &--leave-active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: $transition;
+    }
+}

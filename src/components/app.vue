@@ -4,7 +4,9 @@
 
         <div class="app__overlay-toggle" @click="showNavigationOverlay = true">&#9776;</div>
 
-        <router-view></router-view>
+        <base-transition name="slide-from-left">
+            <router-view :key="$route.path"></router-view>
+        </base-transition>
 
         <app-footer></app-footer>
 

@@ -14,12 +14,15 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed volutpat tortor,
                     eu tincidunt ligula. Suspendisse ullamcorper fermentum felis et pharetra.
                 </p>
-                <base-badge v-for="tag in sprite.tags" :key="tag">{{tag}}</base-badge>
+
+                <div class="sprite__badges">
+                    <base-badge variant="primary" v-for="tag in sprite.tags" :key="tag">{{tag}}</base-badge>
+                </div>
+
+                <base-button class="sprite__download" :target="sprite.image" variant="secondary">Download</base-button>
             </div>
 
         </section>
-
-        <base-button class="sprite__download" :target="sprite.image" variant="primary">Download</base-button>
 
     </main>
 </template>

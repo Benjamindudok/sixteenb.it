@@ -9,16 +9,17 @@ export default class BaseButton extends Vue
     variant: string;
 
     @Prop()
+    ghost: boolean;
+
+    @Prop()
     target: string;
 
     get buttonClasses(): any
     {
         return {
             'button': true,
-            'button--ghost': this.variant === 'ghost',
-            'button--blue': this.variant === 'primary',
-            'button--secondary': this.variant === 'secondary',
-            'button--warning': this.variant === 'warning'
+            'button--ghost': this.ghost === true,
+            ['button--' + this.variant]: this.variant !== '' || this.variant != null,
         };
     }
 }

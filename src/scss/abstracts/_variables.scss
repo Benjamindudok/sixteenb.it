@@ -46,6 +46,14 @@ $color-anchor-focus: map-deep-get($colors, 'turqiouse', 'default');
 $color-border: map-deep-get($colors, 'black', 'default');
 
 $color-sets: (
+    'primary': (
+        'default': $color-primary,
+        'hover': $color-primary-light
+    ),
+    'secondary': (
+        'default': $color-secondary,
+        'hover': $color-secondary-light
+    ),
     'warning': (
         'default': $color-warning,
         'hover': $color-secondary-light

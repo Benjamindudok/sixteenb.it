@@ -1,5 +1,5 @@
 <template>
-    <span class="badge badge--ghost">
+    <span :class="badgeClasses">
         <slot></slot>
     </span>
 </template>

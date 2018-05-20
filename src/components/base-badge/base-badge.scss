@@ -17,18 +17,22 @@
 
     $badge: &;
 
-    &:hover {
-        background-color: $badge-background-hover;
-        border-color: $badge-border-color-hover;
+    &:link {
+        &:hover {
+            background-color: $badge-background-hover;
+            border-color: $badge-border-color-hover;
+        }
     }
 
     &--ghost {
         background: transparent;
         color: map-deep-get($colors, 'black', 'default');
 
-        &:hover {
-            background: map-deep-get($colors, 'black', 'default');
-            color: map-deep-get($colors, 'white', 'default');
+        &:link {
+            &:hover {
+                background: map-deep-get($colors, 'black', 'default');
+                color: map-deep-get($colors, 'white', 'default');
+            }
         }
     }
 
@@ -39,10 +43,12 @@
             background: map-get($color, 'default');
             color: map-deep-get($colors, 'white', 'default');
 
-            &:hover {
-                border-color: map-get($color, 'hover');
-                background: map-get($color, 'hover');
-                color: map-deep-get($colors, 'white', 'default');
+            &:link {
+                &:hover {
+                    border-color: map-get($color, 'hover');
+                    background: map-get($color, 'hover');
+                    color: map-deep-get($colors, 'white', 'default');
+                }
             }
 
             &#{$badge}--ghost {
@@ -50,10 +56,12 @@
                 border-color: map-get($color, 'default');
                 color: map-get($color, 'default');
 
-                &:hover {
-                    background: transparent;
-                    border-color: map-get($color, 'hover');
-                    color: map-get($color, 'hover');
+                &:link {
+                    &:hover {
+                        background: transparent;
+                        border-color: map-get($color, 'hover');
+                        color: map-get($color, 'hover');
+                    }
                 }
             }
         }

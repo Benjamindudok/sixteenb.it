@@ -30,7 +30,7 @@
     }
 
     &__preview {
-        background: map-deep-get($colors, 'blue', 'default') no-repeat center center;
+        background: $sprite-card-image-background-color no-repeat center center;
         border-radius: 15px;
         height: 0;
         margin: 0 0 30px;
@@ -47,6 +47,12 @@
 
     &__title {
         margin: 0 0 15px;
+    }
+
+    &__badges {
+        display: block;
+        padding: 10px 0 25px;
+        width: 100%;
     }
 
     &__download {
