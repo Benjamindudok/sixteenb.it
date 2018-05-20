@@ -13,6 +13,8 @@ export const actions: ActionTree<ISpritesState,  IStoreState> = {
                 .then((data: sixteenBit.IContent) =>
                 {
                     context.commit(types.UPDATE_SPRITES, data);
+                    context.commit(types.UPDATE_PAGINATION);
+
                     resolve(undefined);
                 }).catch((error) =>
                 {

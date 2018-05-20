@@ -1,12 +1,17 @@
 <template>
     <div class="app">
-        <navigation-bar></navigation-bar>
+        <navigation-bar @show-about="showAboutOverlay = true"></navigation-bar>
 
-        <div class="app__overlay-toggle" @click="showOverlay = true">&#9776;</div>
+        <div class="app__overlay-toggle" @click="showNavigationOverlay = true">&#9776;</div>
 
         <router-view></router-view>
 
-        <navigation-overlay @close="showOverlay = false" :show="showOverlay"></navigation-overlay>
+        <navigation-overlay @close="showNavigationOverlay = false"
+                            @show-about="showAboutOverlay = true"
+                            :show="showNavigationOverlay"></navigation-overlay>
+
+        <about-overlay @close="showAboutOverlay = false"
+                       :show="showAboutOverlay"></about-overlay>
     </div>
 </template>
 

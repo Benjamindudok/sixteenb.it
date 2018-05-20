@@ -10,11 +10,19 @@
     position: fixed;
     top: 0;
     width: 100%;
-    @include center-perfectly();
+
+    @include respond-to(medium) {
+        @include center-perfectly();
+    }
 
     &__content {
-        display: inline-block;
-        vertical-align: middle;
+        padding: 50px 20px;
+
+        @include respond-to(medium) {
+            display: inline-block;
+            padding: 0;
+            vertical-align: middle;
+        }
     }
 
     &__close {

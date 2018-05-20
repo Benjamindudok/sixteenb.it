@@ -20,7 +20,22 @@ export default class SpriteCard extends Vue
     @Prop()
     source: string;
 
+    @Prop({default: 1})
+    rows: number;
+
+    @Prop({default: 1})
+    columns: number;
+
     get randomColorId(): number {
         return Math.floor(Math.random() * 3 + 0);
+    }
+
+    get cssClasses(): any {
+        return {
+            'sprite-card': true,
+            'sprite-list__item': true,
+            ['sprite-list__item--colspan-' + this.columns]: true,
+            ['sprite-list__item--rowspan-' + this.rows]: true
+        };
     }
 }

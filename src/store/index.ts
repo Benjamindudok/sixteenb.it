@@ -30,7 +30,8 @@ const store: IStore<IStoreState> = new Vuex.Store<IStoreState>({
             environment: [],
             characters: [],
             items: [],
-            ui: []
+            interface: [],
+            spritesPerPage: 0
         }
     },
     actions: actions,

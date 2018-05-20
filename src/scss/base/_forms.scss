@@ -1,0 +1,54 @@
+.form {
+    $form: &;
+
+    &__group {
+        position: relative;
+    }
+
+    &__label {
+        display: block;
+        font-weight: 700;
+        left: 0;
+        line-height: rem-calc(24);
+        padding: 6px 20px;
+        position: absolute;
+        top: 0;
+        transition: $transition-default;
+        width: 100%;
+
+        &::before {
+            border-bottom: 3px solid $color-border;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: $transition-default;
+            width: 0;
+        }
+    }
+
+    &__control {
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid rgba($color-text-grey, .3);
+        color: $color-text-grey;
+        line-height: rem-calc(24);
+        padding: 6px 20px;
+
+        &--isTouched, &:focus {
+            outline: none;
+
+            ~ #{$form}__label {
+                font-size: rem-calc(14);
+                top: -24px;
+
+                &::before {
+                    top: 24px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

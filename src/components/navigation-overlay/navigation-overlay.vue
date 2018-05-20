@@ -4,8 +4,8 @@
             <li class="navigation-overlay__item" @click="close">
                 <router-link to="/" class="navigation-overlay__link">Sprites</router-link>
             </li>
-            <li class="navigation-overlay__item" @click="close">
-                <router-link to="/" class="navigation-overlay__link">About</router-link>
+            <li class="navigation-overlay__item" @click="showAbout">
+                <span class="navigation-overlay__link">About</span>
             </li>
             <li class="navigation-overlay__item">
 
