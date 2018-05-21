@@ -113,10 +113,17 @@ $pagination-link-color-active: map-deep-get($colors, 'white', 'default');
 // Sprite Card
 $sprite-card-background: transparent;
 $sprite-card-border-color: transparent;
-$sprite-card-border-width: 0;
+$sprite-card-border-width: 2px;
 $sprite-card-border-radius: 3px;
+$sprite-card-transition: $transition;
 $sprite-card-image-background-color: map-deep-get($colors, 'grey', 'light');
+$sprite-card-image-border-color: transparent;
+$sprite-card-image-border-color-hover: map-deep-get($colors, 'blue', 'default');
+$sprite-card-image-border-width: 2px;
+$sprite-card-image-border-radius: 5px;
+$sprite-card-image-transition: $transition;
 $sprite-card-title-color: $color-text;
+$sprite-card-title-color-hover: $color-secondary;
 $sprite-card-title-font-size: rem-calc(18);
 $sprite-card-title-font-weight: $global-font-weight-bold;
 

@@ -42,4 +42,19 @@
         margin: 0;
         padding: 0;
     }
+
+    &__input {
+        float: left;
+        margin-right: 5%;
+        width: 70%;
+    }
+
+    &__newsletter {
+        margin-top: 20px;
+    }
+
+    &__signup {
+        float: left;
+        width: 25%;
+    }
 }

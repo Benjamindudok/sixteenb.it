@@ -4,7 +4,7 @@
 
 .sprite-card {
     background: $sprite-card-background;
-    border: none;
+    border: $sprite-card-border-color solid $sprite-card-border-width;
     border-radius: $sprite-card-border-radius;
     box-sizing: border-box;
     display: block;
@@ -14,12 +14,14 @@
 
     &__image {
         background: $sprite-card-image-background-color no-repeat center center;
-        border-radius: 15px;
+        border: $sprite-card-image-border-color solid $sprite-card-image-border-width;
+        border-radius: $sprite-card-image-border-radius;
         display: block;
         height: 100%;
         overflow: hidden;
         padding-bottom: 100%;
         position: relative;
+        transition: $sprite-card-image-transition;
         width: 100%;
     }
 
@@ -32,5 +34,20 @@
         margin-bottom: 0;
         max-width: 75%;
         padding: 10px 0;
+        transition: $sprite-card-transition;
+    }
+
+    &:hover {
+        #{$spriteCard}__title {
+            color: $sprite-card-title-color-hover;
+        }
+    }
+
+    &:focus {
+        outline: none;
+
+        #{$spriteCard}__image {
+            border-color: $sprite-card-image-border-color-hover;
+        }
     }
 }
