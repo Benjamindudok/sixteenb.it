@@ -3,25 +3,23 @@
         <div class="footer__container container">
             <section class="footer__section">
                 <h5 class="footer__title">About sixteenb.it</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut magna mattis, accumsan massa at, maximus arcu. Donec semper ligula nisl, eu laoreet dui hendrerit eu.</p>
-                <p class="footer__copyright">made with &hearts; by <a href="http://www.benjamindudok.nl">Benjamin Dudok</a> & <a href="http://www.chantalvaniwaarden.nl">Chantal van Iwaarden</a></p>
+                <p>
+                    We've created this website to showcase all our ventures into pixel art, making assets everyone can
+                    use in any creative work.
+                </p>
+                <p class="footer__copyright">
+                    made with &hearts; by <a href="http://www.benjamindudok.nl">Benjamin Dudok</a> &
+                    <a href="http://www.chantalvaniwaarden.nl">Chantal van Iwaarden</a>
+                </p>
             </section>
 
             <section class="footer__section">
-                <h5 class="footer__title">Contact</h5>
-                <ul class="footer__list">
-                    <li class="footer__item">
-                        <a href="mailto:benjaminwd@gmail.com" class="footer__link">Email</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="http://www.twitter.com" class="footer__link">Twitter</a>
-                    </li>
-                    <li class="footer__item">
-                        <a href="http://www.github.com" class="footer__link">Github</a>
-                    </li>
-                </ul>
+                <h5 class="footer__title">Licensing</h5>
+                <p>All the works on this site are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+                </a>
             </section>
-
 
             <section class="footer__section">
                 <h5 class="footer__title">Newsletter</h5>

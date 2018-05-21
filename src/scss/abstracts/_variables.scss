@@ -39,10 +39,10 @@ $color-warning-light: map-deep-get($colors, 'red', 'light');
 
 $color-text: map-deep-get($colors, 'grey', 'darker');
 $color-header: $color-text;
-$color-header-alternate: map-deep-get($colors, 'blue', 'default');
-$color-anchor: map-deep-get($colors, 'turqiouse', 'default');
-$color-anchor-hover: map-deep-get($colors, 'turqiouse', 'light');
-$color-anchor-focus: map-deep-get($colors, 'turqiouse', 'default');
+$color-header-alternate: $color-primary;
+$color-anchor: $color-secondary;
+$color-anchor-hover: $color-secondary-light;
+$color-anchor-focus: $color-secondary-light;
 $color-border: map-deep-get($colors, 'black', 'default');
 
 $color-sets: (
@@ -96,15 +96,15 @@ $button-transition: $transition;
 
 // Overlay
 $overlay-background: map-deep-get($colors, 'white', 'default');
-$overlay-close-color: map-deep-get($colors, 'blue', 'default');
-$overlay-close-color-hover: map-deep-get($colors, 'blue', 'light');
+$overlay-close-color: $color-primary;
+$overlay-close-color-hover: $color-secondary;
 $overlay-close-transition: $transition;
 $overlay-transition: all .3s $transition-smoothing;
 
 // Pagination
-$pagination-link-background-color: map-deep-get($colors, 'blue', 'default');
-$pagination-link-background-color-hover: map-deep-get($colors, 'blue', 'light');
-$pagination-link-background-color-active: map-deep-get($colors, 'blue', 'light');
+$pagination-link-background-color: map-deep-get($colors, 'grey', 'light');
+$pagination-link-background-color-hover: map-deep-get($colors, 'grey', 'default');
+$pagination-link-background-color-active: $color-secondary;
 $pagination-link-border-radius: 5px;
 $pagination-link-color: map-deep-get($colors, 'white', 'default');
 $pagination-link-color-hover: map-deep-get($colors, 'white', 'default');
@@ -118,7 +118,7 @@ $sprite-card-border-radius: 3px;
 $sprite-card-transition: $transition;
 $sprite-card-image-background-color: map-deep-get($colors, 'grey', 'light');
 $sprite-card-image-border-color: transparent;
-$sprite-card-image-border-color-hover: map-deep-get($colors, 'blue', 'default');
+$sprite-card-image-border-color-hover: $color-secondary;
 $sprite-card-image-border-width: 2px;
 $sprite-card-image-border-radius: 5px;
 $sprite-card-image-transition: $transition;

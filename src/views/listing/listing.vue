@@ -2,8 +2,8 @@
     <main class="container listing">
 
         <header class="listing__header">
-        <h1>A repository of free-to-use pixel art</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut magna mattis, accumsan massa at, maximus arcu. Donec semper ligula nisl, eu laoreet dui hendrerit eu.</p>
+        <h1>A collection of free pixel art assets</h1>
+        <p>Feel free to browse through our collection of all kinds of pixel art assets, from interface elements to (animated) characters and environmental pieces.   </p>
         </header>
 
         <div class="listing__filters">
