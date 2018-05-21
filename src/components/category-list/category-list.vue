@@ -2,7 +2,7 @@
     <ul class="category-list">
         <li v-for="category in categories"
             :class="{'category-list__item': true}">
-            <router-link :to="'/' + category"
+            <router-link :to="{ path: '/', query: completeQuery(category)}"
                          :class="{'category-list__link': true, 'category-list__link--active': $route.params.categoryName == category }">
                 {{displayNameForCategory(category)}}
             </router-link>

@@ -11,12 +11,12 @@
     grid-auto-rows: minmax(175px, auto);
     grid-auto-flow: dense;
 
-    @include clear-float();
-
     @include respond-to(medium) {
         grid-gap: 50px;
         grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     }
+
+    @include clear-float();
 
     &__item {
         border-radius: 10px;

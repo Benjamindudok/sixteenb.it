@@ -3,6 +3,7 @@
                 :enter-class="name + '--enter'"
                 :enter-active-class="name + '--enter-active'"
                 :enter-to-class="name + '--enter-to'"
+                :move-class="name + '--move'"
                 :leave-class="name + '--leave'"
                 :leave-active-class="name + '--leave-active'"
                 :leave-to-class="name + '--leave-to'"
@@ -14,11 +15,11 @@
                  :enter-class="name + '--enter'"
                  :enter-active-class="name + '--enter-active'"
                  :enter-to-class="name + '--enter-to'"
+                 :move-class="name + '--move'"
                  :leave-class="name + '--leave'"
                  :leave-active-class="name + '--leave-active'"
                  :leave-to-class="name + '--leave-to'"
-                 :appear="appear"
-                 :mode="mode">
+                 :appear="appear">
         <slot></slot>
     </transition-group>
 </template>

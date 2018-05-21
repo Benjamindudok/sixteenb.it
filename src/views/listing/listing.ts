@@ -26,6 +26,8 @@ export default class Listing extends Vue
     }
 
     search(): void {
+        // todo: make sure you can search and filter by category at the same time
+        // todo: delete search query string if empty
         this.$router.push({ query: Object.assign({}, { search: this.searchKeyword }) });
     }
 
@@ -35,9 +37,9 @@ export default class Listing extends Vue
         {
             return this.$store.getters.searchForSprite(this.$route.query.search, this.currentPage);
         }
-        else if (this.$route.params.categoryName)
+        else if (this.$route.query.category)
         {
-            return this.$store.getters.spritesInCategory(this.$route.params.categoryName, this.currentPage);
+            return this.$store.getters.spritesInCategory(this.$route.query.category, this.currentPage);
         }
 
         return this.$store.getters.sprites(this.currentPage);
@@ -48,9 +50,9 @@ export default class Listing extends Vue
         {
             return this.$store.getters.searchForSprite(this.$route.query.search).length;
         }
-        else if (this.$route.params.categoryName)
+        else if (this.$route.query.category)
         {
-            return this.$store.getters.spritesInCategory(this.$route.params.categoryName).length;
+            return this.$store.getters.spritesInCategory(this.$route.query.category).length;
         }
 
         return this.$store.getters.sprites().length;

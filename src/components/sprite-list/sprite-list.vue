@@ -1,5 +1,5 @@
 <template>
-    <div class="sprite-list">
+        <base-transition name="slide-from-bottom" tag="section" class="sprite-list" :group="true">
             <sprite-card v-for="sprite in filteredSprites"
                          :key="sprite.uuid"
                          :class="{'sprite-list__item': true}"
@@ -9,7 +9,7 @@
                          :rows="sprite.rows"
                          :columns="sprite.columns">
             </sprite-card>
-    </div>
+        </base-transition>
 </template>
 
 <script lang="ts" src="./sprite-list.ts"></script>

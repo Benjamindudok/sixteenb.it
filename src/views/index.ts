@@ -13,11 +13,6 @@ export default new Router({
             component: Listing
         },
         {
-            path: '/:categoryName',
-            name: 'Home with category',
-            component: Listing
-        },
-        {
             path: '/sprite/:spriteID',
             name: 'Sprite details',
             component: Sprite

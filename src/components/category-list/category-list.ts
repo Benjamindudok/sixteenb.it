@@ -18,4 +18,21 @@ export default class CategoryList extends Vue
                 : 'All';
         };
     }
+
+    get completeQuery(): Function {
+        return (categorySlug: string) => {
+            let completeQuery: any = Object.assign({}, this.$route.query);
+
+            if (categorySlug == '') {
+                delete completeQuery.category;
+            }
+            else
+            {
+                completeQuery.category = categorySlug;
+            }
+
+
+            return completeQuery;
+        };
+    }
 }
