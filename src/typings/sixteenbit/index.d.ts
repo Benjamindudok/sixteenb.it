@@ -12,8 +12,10 @@ declare namespace sixteenBit
         slug: string;
         tags: string[];
         uuid: string;
-        columns: number;
-        rows: number;
+        description: string;
+        width: number;
+        height: number;
+        fileSize: string;
         preview: string;
         image: string;
     }

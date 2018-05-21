@@ -4,6 +4,7 @@ const path = require('path');
 const chalk = require('chalk');
 const jetpack = require('fs-jetpack');
 const uuidv1 = require('uuid/v4');
+const sizeOf = require('image-size');
 
 let content = {},
     totalFileSize = 0;
@@ -19,8 +20,7 @@ readDirectoryRecursively(contentDirectory, () => {
 
     console.log(chalk.green(`Generated ` + targetFile + ` in '` + distDirectory + `' directory.`));
     console.log(chalk.green(`Total content folder size: ` +
-        chalk.white.bold(totalFileSize) +
-        ` bytes`)
+        chalk.white.bold(formatBytes(totalFileSize)))
     );
 });
 
@@ -68,7 +68,7 @@ function readFile(filePath, directoryName)
     {
         console.log(chalk.blue(`name: ` +
             chalk.blue.bold(`${imageDetails.name}`) + ` - ` +
-            chalk.blue.bold(`${imageDetails.size}`) + ` bytes`)
+            chalk.blue.bold(formatBytes(imageDetails.size)))
         );
 
         // save current file size to show total
@@ -81,6 +81,13 @@ function readFile(filePath, directoryName)
         // add file url
         fileContent.preview = filePath.replace('.json', '.png').replace(jetpack.cwd(path.resolve(__dirname, distDirectory)).path(), '').split('\\').join('/');
         fileContent.image = filePath.replace('.json', '.png').replace(jetpack.cwd(path.resolve(__dirname, distDirectory)).path(), '').split('\\').join('/');
+
+        // add file meta data
+        fileContent.fileSize = formatBytes(imageDetails.size);
+
+        let dimensions = sizeOf(filePath.replace('.json', '.png'));
+        fileContent.width = dimensions.width;
+        fileContent.height = dimensions.height;
 
         // create category if needed
         if (!content[directoryName])
@@ -104,3 +111,7 @@ function getCurrentDirectoryName(directoryPath)
     let directoryPathInChunks = directoryPath.split(path.sep);
     return directoryPathInChunks[directoryPathInChunks.length - 1];
 }
+
+// Format amount of bytes into appropiate human readable file size
+// Borrowed from: https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
+function formatBytes(a,b){if(0==a)return"0 Bytes";var c=1024,d=b||2,e=["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"],f=Math.floor(Math.log(a)/Math.log(c));return parseFloat((a/Math.pow(c,f)).toFixed(d))+" "+e[f]}

@@ -11,9 +11,17 @@
                 <h2 class="sprite__title">{{sprite.name}}</h2>
 
                 <p class="sprite__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed volutpat tortor,
-                    eu tincidunt ligula. Suspendisse ullamcorper fermentum felis et pharetra.
+                    {{sprite.description}}
                 </p>
+
+                <ul class="sprite__meta">
+                    <li class="sprite__data">
+                        <strong>File size:</strong> {{sprite.fileSize}}
+                    </li>
+                    <li class="sprite__data">
+                        <strong>Dimensions:</strong> {{sprite.width}}px x {{sprite.height}}px
+                    </li>
+                </ul>
 
                 <div class="sprite__badges">
                     <base-badge variant="primary" v-for="tag in sprite.tags" :key="tag">{{tag}}</base-badge>
