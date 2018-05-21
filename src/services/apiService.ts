@@ -11,6 +11,6 @@ export default class ApiService
         return Axios.create({
             baseURL: '',
             timeout: 15000
-        })
+        });
     }
 }

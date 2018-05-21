@@ -9,7 +9,7 @@
             "es2016"
         ],
         "isolatedModules": false,
-        "declaration": true,
+        "declaration": false,
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true,

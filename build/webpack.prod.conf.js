@@ -35,7 +35,8 @@ const webpackConfig = merge(baseWebpackConfig, {
 
         // http://vuejs.github.io/vue-loader/en/workflow/production.html
         new webpack.DefinePlugin({
-            'process.env': env
+            'process.env': env,
+            '__HISTORY_MODE__': env.__HISTORY_MODE__
         }),
 
         new UglifyJsPlugin({
@@ -128,6 +129,11 @@ const webpackConfig = merge(baseWebpackConfig, {
             {
                 from: path.resolve(__dirname, '../static'),
                 to: config.build.assetsSubDirectory,
+                ignore: ['.*']
+            },
+            {
+                from: path.resolve(__dirname, '../server'),
+                to: config.build.assetsRoot,
                 ignore: ['.*']
             }
         ])

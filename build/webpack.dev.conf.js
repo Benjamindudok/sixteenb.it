@@ -42,7 +42,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env': require('../config/dev.env')
+            'process.env': require('../config/dev.env'),
+            '__HISTORY_MODE__': require('../config/dev.env').__HISTORY_MODE__
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
@@ -63,8 +64,9 @@ module.exports = new Promise((resolve, reject) =>
     {
         if (err)
         {
-            reject(err)
-        } else
+            reject(err);
+        }
+        else
         {
             // publish the new Port, necessary for e2e tests
             process.env.PORT = port;
