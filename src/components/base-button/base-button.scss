@@ -14,9 +14,10 @@
     text-align: center;
     transition: $button-transition;
 
-    &:hover {
+    &:hover, &:active, &:focus {
         background-color: $badge-background-hover;
         border-color: $badge-border-color-hover;
+        color: $button-color;
     }
 
     $button: &;
@@ -25,7 +26,7 @@
         background: transparent;
         color: map-deep-get($colors, 'black', 'default');
 
-        &:hover {
+        &:hover, &:active, &:focus {
             background: map-deep-get($colors, 'black', 'default');
             color: map-deep-get($colors, 'white', 'default');
         }
@@ -38,7 +39,7 @@
             background: map-get($color, 'default');
             color: map-deep-get($colors, 'white', 'default');
 
-            &:hover {
+            &:hover, &:active, &:focus {
                 border-color: map-get($color, 'hover');
                 background: map-get($color, 'hover');
                 color: map-deep-get($colors, 'white', 'default');
@@ -49,7 +50,7 @@
                 border-color: map-get($color, 'default');
                 color: map-get($color, 'default');
 
-                &:hover {
+                &:hover, &:active, &:focus {
                     background: transparent;
                     border-color: map-get($color, 'hover');
                     color: map-get($color, 'hover');

@@ -14,6 +14,9 @@ export default class BaseButton extends Vue
     @Prop()
     target: string;
 
+    @Prop({ default: false })
+    external: boolean;
+
     get buttonClasses(): any
     {
         return {

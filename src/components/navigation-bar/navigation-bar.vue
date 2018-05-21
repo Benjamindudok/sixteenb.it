@@ -1,7 +1,11 @@
 <template>
     <nav class="navigation-bar">
         <div class="container">
-            <h1 class="navigation-bar__title">Sixteenbit</h1>
+            <router-link :to="'/'">
+                <h1 class="navigation-bar__title">
+                    Sixteenbit
+                </h1>
+            </router-link>
             <ul class="navigation-bar__list">
                 <li class="navigation-bar__item">
                     <router-link to="/" class="navigation-bar__link" active-class="navigation-bar__link--isActive">Sprites</router-link>

@@ -19,7 +19,7 @@
                     <base-badge variant="primary" v-for="tag in sprite.tags" :key="tag">{{tag}}</base-badge>
                 </div>
 
-                <base-button class="sprite__download" :target="sprite.image" variant="secondary">Download</base-button>
+                <base-button :external="true" class="sprite__download" :target="sprite.image" variant="secondary">Download</base-button>
             </div>
 
         </section>
