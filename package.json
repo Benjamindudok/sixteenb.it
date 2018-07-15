@@ -8,13 +8,15 @@
         "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
         "start": "npm run dev",
         "build": "node build/build.js",
-        "crawl": "node tools/crawl.js"
+        "crawl": "node tools/crawl.js",
+        "serve": "node_modules/http-server/bin/http-server"
     },
     "dependencies": {
         "@types/node": "^10.1.2",
         "axios": "^0.16.2",
         "connect-history-api-fallback": "^1.5.0",
         "express": "^4.16.3",
+        "http-server": "^0.11.1",
         "moment": "^2.19.3",
         "morgan": "^1.9.0",
         "normalize.css": "^7.0.0",
