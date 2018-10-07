@@ -25,6 +25,10 @@ export default class Listing extends Vue
         this.currentPage = 1;
     }
 
+    onPageSelected(number: any): void {
+        this.$router.push({ query: Object.assign({}, this.$route.query, { page: number }) });
+    }
+
     search(): void {
         this.$router.push({ query: Object.assign({}, { search: this.searchKeyword }) });
     }

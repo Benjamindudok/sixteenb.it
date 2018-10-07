@@ -15,7 +15,7 @@
 
         <sprite-list :sprites="sprites"></sprite-list>
 
-        <base-pagination v-if="amountOfPages > 0" :pages="amountOfPages" :current-page="currentPage"></base-pagination>
+        <anemone-pagination v-if="amountOfPages > 0" :pages="amountOfPages" :current-page="currentPage" @page-selected="onPageSelected"></anemone-pagination>
     </main>
 </template>
 

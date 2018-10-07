@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <anemone-base class="app">
         <navigation-bar @show-about="showAboutOverlay = true"></navigation-bar>
 
         <div class="app__overlay-toggle" @click="showNavigationOverlay = true">&#9776;</div>
@@ -12,7 +12,7 @@
 
         <about-overlay @close="showAboutOverlay = false"
                        :show="showAboutOverlay"></about-overlay>
-    </div>
+    </anemone-base>
 </template>
 
 <script lang="ts" src="./app.ts"></script>

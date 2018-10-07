@@ -14,12 +14,12 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed volutpat tortor,
                     eu tincidunt ligula. Suspendisse ullamcorper fermentum felis et pharetra.
                 </p>
-                <base-badge v-for="tag in sprite.tags" :key="tag">{{tag}}</base-badge>
+                <anemone-badge v-for="tag in sprite.tags" :key="tag">{{tag}}</anemone-badge>
             </div>
 
         </section>
 
-        <base-button class="sprite__download" :target="sprite.image" variant="primary">Download</base-button>
+        <anemone-button class="sprite__download" :target="sprite.image" variant="primary">Download</anemone-button>
 
     </main>
 </template>

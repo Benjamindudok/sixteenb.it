@@ -2,13 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 
+import anemoneUI from 'anemone-ui';
+
+ Vue.use((anemoneUI as any));
+
 // Vue components
-import App from 'src/components/App.vue';
+import App from 'src/components/app.vue';
 import AboutOverlay from 'src/views/about/overlay/about-overlay.vue';
-import BaseBadge from 'src/components/base-badge/base-badge.vue';
-import BaseButton from 'src/components/base-button/base-button.vue';
-import BaseOverlay from 'src/components/base-overlay/base-overlay.vue';
-import BasePagination from 'src/components/base-pagination/base-pagination.vue';
 import CategoryList from 'src/components/category-list/category-list.vue';
 import NavigationBar from 'src/components/navigation-bar/navigation-bar.vue';
 import NavigationOverlay from 'src/components/navigation-overlay/navigation-overlay.vue';
@@ -19,16 +19,13 @@ import SpriteList from 'src/components/sprite-list/sprite-list.vue';
 import { fromNow, format } from './utils/filters/dates/';
 
 // Vue libraries
-import router from 'src/views/';
-import store from 'src/store/';
+import router from 'src/router';
+import store from 'src/store';
 
 Vue.config.productionTip = false;
 
 Vue.component('about-overlay', AboutOverlay);
-Vue.component('base-badge', BaseBadge);
-Vue.component('base-button', BaseButton);
-Vue.component('base-overlay', BaseOverlay);
-Vue.component('base-pagination', BasePagination);
+
 Vue.component('category-list', CategoryList);
 Vue.component('navigation-bar', NavigationBar);
 Vue.component('navigation-overlay', NavigationOverlay);

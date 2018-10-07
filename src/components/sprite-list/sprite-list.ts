@@ -6,10 +6,10 @@ import { Prop } from 'vue-property-decorator';
 export default class SpriteList extends Vue
 {
     @Prop({ default: () => { return []; } })
-    sprites: sixteenBit.IItem[];
+    sprites!: sixteenBit.IItem[];
 
     @Prop()
-    selectedTags: sixteenBit.Tags[];
+    selectedTags!: sixteenBit.Tags[];
 
     get filteredSprites(): sixteenBit.IItem[]
     {

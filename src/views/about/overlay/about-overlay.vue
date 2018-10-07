@@ -1,5 +1,5 @@
 <template>
-    <base-overlay class="about-overlay" @close="close" :show="show">
+    <anemone-overlay class="about-overlay" @close="close" :show="show">
         <div class="about-overlay__content">
             <h2>About the creator</h2>
             <p>
@@ -18,7 +18,7 @@
                 for everyone to use in games or anything else.
             </p>
         </div>
-    </base-overlay>
+    </anemone-overlay>
 </template>
 
 <script lang="ts" src="./about-overlay.ts"></script>

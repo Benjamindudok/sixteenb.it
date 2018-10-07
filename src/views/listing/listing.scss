@@ -1,5 +1,5 @@
-@import '../../scss/abstracts/_functions.scss';
-@import '../../scss/abstracts/_mixins.scss';
+@import '~anemone-ui/src/scss/reference';
+@import '../../scss/variables';
 
 .listing {
     padding-bottom: 30px;
@@ -23,6 +23,7 @@
 
     &__categories {
         float: right;
+        padding: 7px 0;
     }
 
     &__search {

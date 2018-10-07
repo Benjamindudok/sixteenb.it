@@ -1,8 +1,8 @@
-@import '../scss/abstracts/functions';
-@import '../scss/abstracts/mixins';
-@import '../scss/abstracts/variables';
+@import '~anemone-ui/src/scss/reference';
+@import '~anemone-ui/dist/anemone-ui.css';
 
-@import '../scss/base/reset';
+@import '../scss/variables';
+
 @import '../scss/base/base';
 @import '../scss/base/forms';
 @import '../scss/base/typography';

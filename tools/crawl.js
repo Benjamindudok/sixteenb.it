@@ -9,7 +9,7 @@ let content = {},
     totalFileSize = 0;
 
 let contentDirectory = '../content',
-    distDirectory = '../static/',
+    distDirectory = '../public/',
     targetFile = 'content.json';
 
 console.log(chalk.blue('crawling...'));

@@ -6,7 +6,7 @@ import { Emit, Prop } from 'vue-property-decorator';
 export default class NavigationOverlay extends Vue
 {
     @Prop()
-    show: boolean;
+    show!: boolean;
 
     @Emit('close')
     close(): void

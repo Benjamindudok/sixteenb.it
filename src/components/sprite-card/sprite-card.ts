@@ -6,25 +6,25 @@ import { Prop } from 'vue-property-decorator';
 export default class SpriteCard extends Vue
 {
     @Prop()
-    uuid: string;
+    uuid!: string;
 
     @Prop()
-    name: string;
+    name!: string;
 
     @Prop()
-    slug: string;
+    slug!: string;
 
     @Prop()
-    tags: sixteenBit.Tags[];
+    tags!: sixteenBit.Tags[];
 
     @Prop()
-    source: string;
+    source!: string;
 
     @Prop({default: 1})
-    rows: number;
+    rows!: number;
 
     @Prop({default: 1})
-    columns: number;
+    columns!: number;
 
     get randomColorId(): number {
         return Math.floor(Math.random() * 3 + 0);

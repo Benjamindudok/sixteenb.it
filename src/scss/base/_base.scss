@@ -2,14 +2,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    background: map-deep-get($colors, 'white', 'default');
-    font-family: $font-family;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4rem;
-}
-
 .container {
     box-sizing: border-box;
     margin: 0;

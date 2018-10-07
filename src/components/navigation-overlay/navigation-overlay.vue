@@ -1,5 +1,5 @@
 <template>
-    <base-overlay class="navigation-overlay" @close="close" :show="show">
+    <anemone-overlay class="navigation-overlay" @close="close" :show="show">
         <ul class="navigation-overlay__list">
             <li class="navigation-overlay__item" @click="close">
                 <router-link to="/" class="navigation-overlay__link">Sprites</router-link>
@@ -14,7 +14,7 @@
                 <router-link to="/" class="navigation-overlay__link">Donate</router-link>
             </li>
         </ul>
-    </base-overlay>
+    </anemone-overlay>
 </template>
 
 <script lang="ts" src="./navigation-overlay.ts"></script>

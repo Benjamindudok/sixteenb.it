@@ -1,6 +1,5 @@
-@import '../../scss/abstracts/functions';
-@import '../../scss/abstracts/mixins';
-@import '../../scss/abstracts/variables';
+@import '~anemone-ui/src/scss/reference';
+@import '../../scss/variables';
 
 .sprite-card {
     background: saturate($card-default-background, 10%);

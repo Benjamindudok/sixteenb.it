@@ -1,0 +1,73 @@
+@import '~anemone-ui/src/scss/reference';
+
+$colors: (
+        'black': ('dark': darken(#030303, 5%), 'default': #030303, 'light': lighten(#030303, 5%)),
+        'blue': ('dark': darken(#1accca, 5%), 'default': #1accca, 'light': lighten(#1accca, 10%)),
+        'turqiouse': ('dark': darken(#41d0a3, 5%), 'default': #41d0a3, 'light': lighten(#41d0a3, 10%)),
+        'lemon': ('dark': darken(#bcdd24, 5%), 'default': #bcdd24, 'light': lighten(#bcdd24, 10%)),
+        'white': ('dark': #ededed, 'default': #f4f4f4, 'light': #ffffff)
+);
+
+$global-font-size: 16px;
+
+$color-primary: map-deep-get($colors, 'blue', 'default');
+$color-secondary: map-deep-get($colors, 'turqiouse', 'default');
+
+$color-text: map-deep-get($colors, 'black', 'light');
+
+$color-header: $color-primary;
+$color-header-alternate: $color-text;
+
+$color-anchor: $color-primary;
+$color-anchor-hover: lighten($color-primary, 5%);
+$color-anchor-focus: lighten($color-primary, 5%);
+
+$color-border: map-deep-get($colors, 'black', 'default');
+
+//
+// Layout
+$navbar-height: 64px;
+
+//
+// Badge Variables
+// Create variants of badges
+$badge-color-variants: $colors;
+$badge-create-color-variants: true;
+
+// Badge Defaults
+$badge-default-background: map-deep-get($colors, 'blue', 'darker');
+$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
+$badge-default-color: map-deep-get($colors, 'white', 'default');
+$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
+
+$badge-font-family: $global-font-family;
+$badge-font-size: rem-calc(12);
+$badge-transition: $global-transition;
+
+//
+// Button Variables
+// Create variants of buttons
+$badge-color-variants: $colors;
+$badge-create-color-variants: true;
+
+// Button Defaults
+$badge-default-background: map-deep-get($colors, 'blue', 'darker');
+$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
+$badge-default-color: map-deep-get($colors, 'white', 'default');
+$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
+
+$badge-font-family: $global-font-family;
+$badge-font-size: rem-calc(12);
+$badge-transition: $global-transition;
+
+//
+// Card Variables
+$card-default-background: transparent;
+$card-default-border-color: transparent;
+$card-default-border-highlight: map-deep-get($colors, 'blue', 'default');
+$card-default-border-width: 5px;
+$card-default-border-radius: 3px;
+$card-default-padding: 20px 30px 30px;
+$card-default-title-color: $color-text;
+$card-default-content-color: map-deep-get($colors, 'white', 'darkest');
+$card-default-meta-color: $color-text;

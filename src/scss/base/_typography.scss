@@ -1,3 +1,5 @@
+@import '../_variables';
+
 body {
     font-size: rem-calc(16);
     font-weight: 400;
@@ -6,7 +8,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: $color-header;
-    font-family: $header-family;
+    font-family: $global-font-family-header;
     font-weight: 700;
     margin: 0;
 }
@@ -51,7 +53,7 @@ a {
     cursor: pointer;
     font-weight: 700;
     text-decoration: none;
-    transition: $transition-default;
+    transition: $global-transition;
 
     &:hover {
         color: $color-anchor-hover;
