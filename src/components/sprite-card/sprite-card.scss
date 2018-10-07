@@ -2,9 +2,9 @@
 @import '../../scss/variables';
 
 .sprite-card {
-    background: saturate($card-default-background, 10%);
-    border: none;
-    border-radius: $card-default-border-radius;
+    background: $sprite-card-background;
+    border: $sprite-card-border-color solid $sprite-card-border-width;
+    border-radius: $sprite-card-border-radius;
     box-sizing: border-box;
     display: block;
     position: relative;
@@ -12,33 +12,41 @@
     $spriteCard: &;
 
     &__image {
-        background: lighten(map-deep-get($colors, 'turqiouse', 'default'), 25%) no-repeat center center;
-        border-radius: 15px;
+        background: $sprite-card-image-background-color no-repeat center center;
+        border: $sprite-card-image-border-color solid $sprite-card-image-border-width;
+        border-radius: $sprite-card-image-border-radius;
         display: block;
         height: 100%;
         overflow: hidden;
         padding-bottom: 100%;
         position: relative;
+        transition: $sprite-card-image-transition;
         width: 100%;
-
-        &--alternate-1 {
-            background-color: lighten(map-deep-get($colors, 'blue', 'default'), 25%);
-        }
-
-        &--alternate-2 {
-            background-color: lighten(map-deep-get($colors, 'lemon', 'default'), 25%);
-        }
     }
 
     &__title {
         bottom: 5px;
-        color: #ffffff;
-        font-size: rem-calc(16);
-        font-weight: 700;
+        color: $sprite-card-title-color;
+        font-size: $sprite-card-title-font-size;
+        font-weight: $sprite-card-title-font-weight;
         left: 20px;
         margin-bottom: 0;
         max-width: 75%;
         padding: 10px 0;
-        position: absolute;
+        transition: $sprite-card-transition;
+    }
+
+    &:hover {
+        #{$spriteCard}__title {
+            color: $sprite-card-title-color-hover;
+        }
+    }
+
+    &:focus {
+        outline: none;
+
+        #{$spriteCard}__image {
+            border-color: $sprite-card-image-border-color-hover;
+        }
     }
 }

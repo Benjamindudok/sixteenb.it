@@ -1,0 +1,60 @@
+@import '../../scss/abstracts/functions';
+@import '../../scss/abstracts/mixins';
+@import '../../scss/abstracts/variables';
+
+.footer {
+    background-color: $footer-background-color;
+    border: $footer-border-width solid $footer-border-color;
+    margin-top: 50px;
+    padding: 30px 0;
+    width: 100%;
+
+    &__container {
+        display: grid;
+        grid-gap: $footer-grid-gap / 4;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+        @include respond-to(medium) {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        @include respond-to(large) {
+            grid-gap: $footer-grid-gap;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+
+    &__section {
+        font-size: $footer-font-size;
+    }
+
+    &__title {
+        font-size: $footer-title-font-size;
+        font-weight: $footer-title-font-weight;
+    }
+
+    &__copyright {
+        font-weight: $footer-title-font-weight;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__input {
+        float: left;
+        margin-right: 5%;
+        width: 70%;
+    }
+
+    &__newsletter {
+        margin-top: 20px;
+    }
+
+    &__signup {
+        float: left;
+        width: 25%;
+    }
+}

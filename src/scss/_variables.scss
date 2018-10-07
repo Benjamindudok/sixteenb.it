@@ -28,46 +28,37 @@ $color-border: map-deep-get($colors, 'black', 'default');
 // Layout
 $navbar-height: 64px;
 
-//
-// Badge Variables
-// Create variants of badges
-$badge-color-variants: $colors;
-$badge-create-color-variants: true;
+// Sprite Card
+$sprite-card-background: transparent;
+$sprite-card-border-color: transparent;
+$sprite-card-border-width: 2px;
+$sprite-card-border-radius: 3px;
+$sprite-card-transition: $global-transition;
+$sprite-card-image-background-color: $color-cod-gray;
+$sprite-card-image-border-color: transparent;
+$sprite-card-image-border-color-hover: $color-secondary;
+$sprite-card-image-border-width: 2px;
+$sprite-card-image-border-radius: 5px;
+$sprite-card-image-transition: $global-transition;
+$sprite-card-title-color: $color-text;
+$sprite-card-title-color-hover: $color-secondary;
+$sprite-card-title-font-size: rem-calc(18);
+$sprite-card-title-font-weight: $global-font-weight-bold;
 
-// Badge Defaults
-$badge-default-background: map-deep-get($colors, 'blue', 'darker');
-$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
-$badge-default-color: map-deep-get($colors, 'white', 'default');
-$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
+// Footer
+$footer-background-color: $color-silver;
+$footer-border-color: transparent;
+$footer-border-width: 2px;
+$footer-font-size: rem-calc(14);
+$footer-grid-gap: 100px;
+$footer-title-color: $color-text;
+$footer-title-font-size: rem-calc(16);
+$footer-title-font-weight: $global-font-weight-bold;
 
-$badge-font-family: $global-font-family;
-$badge-font-size: rem-calc(12);
-$badge-transition: $global-transition;
-
-//
-// Button Variables
-// Create variants of buttons
-$badge-color-variants: $colors;
-$badge-create-color-variants: true;
-
-// Button Defaults
-$badge-default-background: map-deep-get($colors, 'blue', 'darker');
-$badge-default-background-hover: map-deep-get($colors, 'turqiouse', 'default');
-$badge-default-color: map-deep-get($colors, 'white', 'default');
-$badge-default-color-hover: map-deep-get($colors, 'white', 'default');
-
-$badge-font-family: $global-font-family;
-$badge-font-size: rem-calc(12);
-$badge-transition: $global-transition;
-
-//
-// Card Variables
-$card-default-background: transparent;
-$card-default-border-color: transparent;
-$card-default-border-highlight: map-deep-get($colors, 'blue', 'default');
-$card-default-border-width: 5px;
-$card-default-border-radius: 3px;
-$card-default-padding: 20px 30px 30px;
-$card-default-title-color: $color-text;
-$card-default-content-color: map-deep-get($colors, 'white', 'darkest');
-$card-default-meta-color: $color-text;
+// Forms
+$form-control-border-color: $color-border;
+$form-control-border-color-highlight: $color-secondary;
+$form-control-border-width: 2px;
+$form-control-font-color: $color-text;
+$form-control-line-height: rem-calc(24);
+$form-control-padding: 6px 20px;
