@@ -8,6 +8,7 @@ import anemoneUI from 'anemone-ui';
 
 // Vue components
 import App from 'src/components/app.vue';
+import AppFooter from 'src/components/app-footer/app-footer.vue';
 import AboutOverlay from 'src/views/about/overlay/about-overlay.vue';
 import CategoryList from 'src/components/category-list/category-list.vue';
 import NavigationBar from 'src/components/navigation-bar/navigation-bar.vue';
@@ -25,7 +26,7 @@ import store from 'src/store';
 Vue.config.productionTip = false;
 
 Vue.component('about-overlay', AboutOverlay);
-
+Vue.component('app-footer', AppFooter);
 Vue.component('category-list', CategoryList);
 Vue.component('navigation-bar', NavigationBar);
 Vue.component('navigation-overlay', NavigationOverlay);
