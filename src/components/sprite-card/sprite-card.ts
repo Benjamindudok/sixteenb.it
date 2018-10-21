@@ -15,7 +15,7 @@ export default class SpriteCard extends Vue
     slug!: string;
 
     @Prop()
-    tags!: sixteenBit.Tags[];
+    tags!: any[];
 
     @Prop()
     source!: string;

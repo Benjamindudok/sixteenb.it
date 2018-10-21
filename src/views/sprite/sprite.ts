@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 @Component
 export default class Sprite extends Vue
 {
-    get sprite(): sixteenBit.IItem
+    get sprite(): any
     {
         if (this.$route.params.spriteID)
         {

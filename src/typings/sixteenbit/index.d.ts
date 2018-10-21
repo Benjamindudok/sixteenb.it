@@ -1,36 +1,39 @@
 declare namespace sixteenBit
 {
-    interface IContent {
-        environment: IItem[];
-        characters: IItem[];
-        items: IItem[];
-        interface: IItem[];
-    }
-
-    interface IItem {
+    export interface IAuthorType
+    {
         name: string;
+        website: string;
+    }
+
+    export interface IPageType
+    {
+        title: string;
+        introduction: string;
+        content: string;
+    }
+
+    export interface IGridItemType
+    {
+        title: string;
+        columnSpan: number;
+        rowSpan: number;
+    }
+
+    export interface ISpriteType
+    {
+        uid: string;
         slug: string;
+        title: string;
+        category: string;
         tags: string[];
-        uuid: string;
-        description: string;
-        width: number;
-        height: number;
-        fileSize: string;
-        preview: string;
-        image: string;
-    }
-
-    enum Categories {
-        'environment',
-        'characters',
-        'items',
-        'ui'
-    }
-
-    enum Tags {
-        'rpg',
-        'npc',
-        'side-scroller',
-        'top-down'
+        backgroundColor: string;
+        thumbnail: any;
+        preview: any[];
+        image: any;
+        gridPosition: IGridItemType;
+        author: IAuthorType;
     }
 }
+
+export default sixteenBit;
