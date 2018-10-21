@@ -1,1 +1,1 @@
-export { DataService } from './dataService';
+export * from './contentful-service';

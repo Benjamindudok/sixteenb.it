@@ -1,5 +1,5 @@
 <template>
-        <anemone-transitions name="slide-from-bottom" tag="section" class="sprite-list" :group="true">
+        <anemone-transitions name="slide-from-bottom" tag="section" class="sprite-list" :group="false">
             <sprite-card v-for="sprite in filteredSprites"
                          :key="sprite.uuid"
                          :class="{'sprite-list__item': true}"

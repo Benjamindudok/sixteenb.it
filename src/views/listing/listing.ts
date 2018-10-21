@@ -1,3 +1,5 @@
+import { ContentModule } from '@/store/content-module';
+import { Entry } from 'contentful';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
@@ -35,40 +37,22 @@ export default class Listing extends Vue
         this.$router.push({ query: Object.assign({}, { search: this.searchKeyword }) });
     }
 
-    get sprites(): string
+    get sprites(): Entry<any>[]
     {
-        if (this.$route.query.search)
-        {
-            return this.$store.getters.searchForSprite(this.$route.query.search, this.currentPage);
-        }
-        else if (this.$route.query.category)
-        {
-            return this.$store.getters.spritesInCategory(this.$route.query.category, this.currentPage);
-        }
-
-        return this.$store.getters.sprites(this.currentPage);
+        return ContentModule.sprites;
     }
 
     get amountOfSprites(): number {
-        if (this.$route.query.search)
-        {
-            return this.$store.getters.searchForSprite(this.$route.query.search).length;
-        }
-        else if (this.$route.query.category)
-        {
-            return this.$store.getters.spritesInCategory(this.$route.query.category).length;
-        }
-
-        return this.$store.getters.sprites().length;
+        return 40;
     }
 
     get amountOfSpritesPerPage(): number
     {
-        return this.$store.getters.itemsPerPage;
+        return 20;
     }
 
     get amountOfPages(): number
     {
-        return this.amountOfSprites / this.amountOfSpritesPerPage;
+        return 2;
     }
 }

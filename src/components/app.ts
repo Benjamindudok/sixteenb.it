@@ -1,8 +1,7 @@
+import { ContentModule } from '@/store/content-module';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
-import * as types from '../store/types';
-import ContentfulService from '../services/contentfulService';
 
 @Component
 export default class App extends Vue
@@ -13,15 +12,12 @@ export default class App extends Vue
 
     mounted(): void
     {
-        this.getSpriteData();
-
-        ContentfulService.getContentModel();
-        ContentfulService.getEntries();
+        this.getEntries();
     }
 
     @Watch('route.params.categoryName')
-    getSpriteData(): void
+    getEntries(): void
     {
-        this.$store.dispatch(types.GET_SPRITES);
+        ContentModule.getSpritesAction();
     }
 }
