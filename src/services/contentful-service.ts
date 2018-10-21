@@ -1,5 +1,5 @@
 import { createClient, Entry, Space, ContentfulClientApi, ContentTypeCollection } from 'contentful';
-import sixteenbit from 'src/typings/sixteenbit';
+import { IPageType, ISpriteType } from 'src/typings/sixteenbit';
 
 export default class ContentfulService
 {
@@ -40,10 +40,23 @@ export default class ContentfulService
     }
 
     /**
+     * Get all entries with content type 'page'
+     * @returns {Promise<EntryCollection<any> | never | void>}
+     */
+    public static getPages(): Promise<Entry<IPageType>[]>
+    {
+        return this.contentfulClient().getEntries({
+                content_type: 'page'
+            })
+            .then((response: any) => response.items)
+            .catch(console.error);
+    }
+
+    /**
      * Get all entries with content type 'sprite'
      * @returns {Promise<EntryCollection<any> | never | void>}
      */
-    public static getSprites(): Promise<Entry<sixteenbit.ISpriteType>[]>
+    public static getSprites(): Promise<Entry<ISpriteType>[]>
     {
         return this.contentfulClient().getEntries({
                 content_type: 'sprite'
@@ -57,7 +70,7 @@ export default class ContentfulService
      * @param entryId
      * @returns {Promise<Entry<any> | never | void>}
      */
-    public static getSprite(entryId: string): Promise<Entry<sixteenbit.ISpriteType>>
+    public static getSprite(entryId: string): Promise<Entry<ISpriteType>>
     {
         return this.contentfulClient().getEntry(entryId)
             .then((entry: any) => entry)

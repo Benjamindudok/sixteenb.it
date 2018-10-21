@@ -19,5 +19,6 @@ export default class App extends Vue
     getEntries(): void
     {
         ContentModule.getSpritesAction();
+        ContentModule.getPagesAction();
     }
 }
